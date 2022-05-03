@@ -8,19 +8,27 @@ from .models import LostAnimal
 # Full CRUD
 # Create your views here.
 
-class LostAnimalList(APIView):
+class LostAnimalList(APIView, AllowAny):
     def get(self, request, format=None):
         animals = LostAnimal.objects.all()
         serializer = LostAnimalSerializer(animals, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    def post(self, request, format=None):
-        serializer = LostAnimalSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    # def post(self, request, format=None):
+    #     serializer = LostAnimalSerializer(data=request.data)
+    #     serializer.is_valid(raise_exception=True)
+    #     serializer.save()
+    #     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-class LostAnimalDetail(APIView):
+class CreateLostAnimal(APIView, IsAuthenticated):
+        def post(self, request, format=None):
+            serializer = LostAnimalSerializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class LostAnimalDetail(APIView, IsAuthenticated):
     def get_object(self, pk):
         try:
             return LostAnimal.objects.get(pk=pk)
