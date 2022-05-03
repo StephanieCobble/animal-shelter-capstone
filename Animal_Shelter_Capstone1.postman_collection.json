@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "8ddeaeef-0fba-4c98-84fc-9629fdf3eb74",
+		"name": "Animal_Shelter_Capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Adopters",
+			"item": []
+		},
+		{
+			"name": "Animal_Adopters",
+			"item": []
+		},
+		{
+			"name": "Animals",
+			"item": [
+				{
+					"name": "Get_All_Animals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/animals/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animals",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_Animal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"name\": \"Kit\",\n        \"species\": \"Cat\",\n        \"breed\": \"Siamese\",\n        \"sex\": \"Female\",\n        \"age\": 5,\n        \"image\": \"https://i.pinimg.com/474x/60/14/a0/6014a00af9fd25bce26400eda4add846--serie-charmed-witches.jpg\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing elit pellentesque habitant morbi tristique. Dignissim sodales ut eu sem integer vitae justo eget magna.\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/animals/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animals",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Animal_By_Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/animals/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animals",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Animal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"name\": \"Kit\",\n        \"species\": \"Cat\",\n        \"breed\": \"Siamese\",\n        \"sex\": \"Female\",\n        \"age\": 6,\n        \"image\": \"https://i.pinimg.com/474x/60/14/a0/6014a00af9fd25bce26400eda4add846--serie-charmed-witches.jpg\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing elit pellentesque habitant morbi tristique. Dignissim sodales ut eu sem integer vitae justo eget magna.\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/animals/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animals",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Animal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/animals/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animals",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": []
+		},
+		{
+			"name": "Lost_Animals",
+			"item": [
+				{
+					"name": "Get_All_Lost_Animals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/lost/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lost",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_Lost_Animal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"name\": \"Charlie\",\n        \"species\": \"Cat\",\n        \"breed\": \"Tabby\",\n        \"sex\": \"Male\",\n        \"age\": 2,\n        \"image\": \"file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/Animals:Images/yerlin-matu-GtwiBmtJvaU-unsplash.jpg\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing elit pellentesque habitant morbi tristique. Dignissim sodales ut eu sem integer vitae justo eget magna.\",\n        \"date_found\": \"2022-11-13\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/lost/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lost",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Lost_Animal_By_Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/lost/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lost",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Lost_Animal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"name\": \"Charlie\",\n        \"species\": \"Cat\",\n        \"breed\": \"Tabby\",\n        \"sex\": \"Male\",\n        \"age\": 2,\n        \"image\": \"file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/Animals:Images/yerlin-matu-GtwiBmtJvaU-unsplash.jpg\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing elit pellentesque habitant morbi tristique. Dignissim sodales ut eu sem integer vitae justo eget magna.\",\n        \"date_found\": \"2022-04-13\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/lost/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lost",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Lost_Animal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/lost/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lost",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
