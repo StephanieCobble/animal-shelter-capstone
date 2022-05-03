@@ -7,7 +7,7 @@ from .serializers import AdopterSerializer
 from .models import Adopter
 
 # Create your views here.
-class AdopterList(APIView):
+class AdopterList(APIView, AllowAny):
     def get(self, request, format=None):
         adopter = Adopter.objects.all()
         serializer = AdopterSerializer(adopter, many=True)
@@ -19,7 +19,7 @@ class AdopterList(APIView):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-class AdopterDetail(APIView):
+class AdopterDetail(APIView, IsAuthenticated):
     def get_object(self, pk):
         try:
             return Adopter.objects.get(pk=pk)
