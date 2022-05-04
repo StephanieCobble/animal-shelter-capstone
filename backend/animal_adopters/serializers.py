@@ -5,4 +5,7 @@ from .models import AnimalAdopter
 class AnimalAdopterSerializer(serializers.ModelSerializer):
     class Meta:
         model = AnimalAdopter
-        fields = ['id', 'adopter', 'animal', 'adoption_date']
+        fields = ['id', 'adopter_id', 'animal_id', 'adoption_date']
+    
+    adopter_id = serializers.IntegerField(write_only=True)
+    animal_id = serializers.IntegerField(write_only=True)
