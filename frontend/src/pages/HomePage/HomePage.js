@@ -9,30 +9,30 @@ const HomePage = () => {
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
   const [user, token] = useAuth();
-  const [cars, setCars] = useState([]);
+  const [adopters, setAdopters] = useState([]);
 
   useEffect(() => {
-    const fetchCars = async () => {
+    const fetchAdopters = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
+        let response = await axios.get(`http://127.0.0.1:8000/api/adopters/`, {
           headers: {
             Authorization: "Bearer " + token,
           },
         });
-        setCars(response.data);
+        setAdopters(response.data);
       } catch (error) {
         console.log(error.message);
       }
     };
-    fetchCars();
+    fetchAdopters();
   }, [token]);
   return (
     <div className="container">
       <h1>Home Page for {user.username}!</h1>
-      {cars &&
-        cars.map((car) => (
-          <p key={car.id}>
-            {car.year} {car.make} {car.model}
+      {adopters &&
+        adopters.map((adopter) => (
+          <p key={adopter.id}>
+            {adopter.user} {adopter.first_name} {adopter.last_name} {adopter.street} {adopter.city} {adopter.state} {adopter.zipcode}
           </p>
         ))}
     </div>
@@ -40,3 +40,30 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+// const fetchCars = async () => {
+  //       try {
+  //         let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
+  //           headers: {
+  //             Authorization: "Bearer " + token,
+  //           },
+  //         });
+  //         setCars(response.data);
+  //       } catch (error) {
+  //         console.log(error.message);
+  //       }
+  //     };
+  //     fetchCars();
+  //   }, [token]);
+  //   return (
+  //     <div className="container">
+  //       <h1>Home Page for {user.username}!</h1>
+  //       {cars &&
+  //         cars.map((car) => (
+  //           <p key={car.id}>
+  //             {car.year} {car.make} {car.model}
+  //           </p>
+  //         ))}
+  //     </div>
+  //   );
+  // };

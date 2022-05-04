@@ -4,6 +4,7 @@ from .import views
 
 urlpatterns = [
     path('',views.AdopterList.as_view()),
+    path('account/',views.CreateAdopterDetails.as_view()),
     path('<int:pk>/', views.AdopterDetail.as_view()),  #http://127.0.0.1:8000/api/adopters/1/
 ]
 

@@ -13,6 +13,9 @@ class AdopterList(APIView, AllowAny):
         serializer = AdopterSerializer(adopter, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
+
+class CreateAdopterDetails(APIView, IsAuthenticated):
     def post(self, request, format=None):
         serializer = AdopterSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
