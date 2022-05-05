@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from "axios";
 
 const RegisterPage = () => {
   const { registerUser } = useContext(AuthContext);
@@ -10,6 +12,7 @@ const RegisterPage = () => {
     password: "",
     firstName: "",
     lastName: "",
+    isEmployee: Boolean(false),
   };
   const [formData, handleInputChange, handleSubmit] = useCustomForm(
     defaultValues,
@@ -64,11 +67,35 @@ const RegisterPage = () => {
             onChange={handleInputChange}
           />
         </label>
+
+        <div className="form-check form-switch">
+          <input 
+          className="form-check-input" 
+          type="checkbox" 
+          id="flexSwitchCheckDefault" 
+          name="isEmployee"
+          value={formData.isEmployee}
+          onChange={handleInputChange}
+          // onClick= {Boolean(true)}
+          />
+          <label className="form-check-label" >Are you an employee?</label>
+        </div>
+
+        {/* <label>
+          Are you an employee?{" "}
+          <input
+            type="text"
+            name="is_employee"
+            value={formData.is_employee}
+            onChange={handleInputChange}
+          />
+        </label> */}
+
         <p style={{ fontSize: "12px" }}>
           NOTE: Make this an uncommon password with characters, numbers, and
           special characters!
         </p>
-        <button>Register!</button>
+        <button type="submit">Register!</button>
       </form>
     </div>
   );
