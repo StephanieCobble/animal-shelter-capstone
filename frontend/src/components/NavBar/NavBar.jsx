@@ -19,8 +19,8 @@ const Navbar = () => {
 
         <li className="brand">
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>Haven</b>
-            <b> Pet Rescue</b>
+            <p className="font">Haven</p>
+            <p className="font2">Pet Rescue</p>
           </Link>
         </li>
         <li>

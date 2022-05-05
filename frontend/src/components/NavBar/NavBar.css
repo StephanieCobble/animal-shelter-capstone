@@ -58,3 +58,14 @@ li {
   cursor: pointer;
   font-size: 2rem;
 }
+
+.font{
+  font-family: Georgia, serif;
+  font-size: 50px;
+}
+.font2{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 21px;
+  background-position: 50%;
+  
+}
