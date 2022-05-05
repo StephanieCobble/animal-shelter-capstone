@@ -14,6 +14,7 @@ import AccountPage from "./pages/AccountPage/AccountPage";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import AdoptionFormPage from "./pages/AdoptionFormPage/AdoptionFormPage";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/account" element={<PrivateRoute><AccountPage /></PrivateRoute>} />
+        {/* <Route path="/form" element={<PrivateRoute><AdoptionFormPage /></PrivateRoute>} /> */}
       </Routes>
       <Footer />
     </div>

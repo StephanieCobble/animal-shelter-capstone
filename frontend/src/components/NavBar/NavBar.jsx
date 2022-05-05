@@ -9,10 +9,18 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div className="navBar">
+      <div >
       <ul>
+
+      {/* <div className="navImg">
+
+	    </div> */}
+
+
         <li className="brand">
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>React/Django JWT</b>
+            <b>Haven</b>
+            <b> Pet Rescue</b>
           </Link>
         </li>
         <li>
@@ -23,6 +31,7 @@ const Navbar = () => {
           )}
         </li>
       </ul>
+    </div>
     </div>
   );
 };

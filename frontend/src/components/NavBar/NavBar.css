@@ -9,11 +9,36 @@ li {
 }
 
 .navBar {
-  background: steelblue;
+  background: rgb(192, 159, 245);
   box-shadow: 4px 2px 5px gray;
   color: white;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
+  background-image: url("/../frontend/Assets/navBar/navbar.png");
+  background-repeat:no-repeat;
+  background-position:  75%;
+}
+
+/* .navImg{
+   ;
+  background-repeat:no-repeat;
+  /* background-attachment: fixed; */
+  /* background-position: right center; */
+/* } */ */
+
+/* .navImg2{
+  background-image: url("/../frontend/Assets/navBar/freddie-marriage-iYQC9xWMvw4-unsplash.jpg");
+} */
+
+/* .column {
+  float: left;
+  width: 30%;
+  height: 50%;
+  padding: 5px;
+} */
+
+.img1 {
+  background: (url("file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/Assets/navBar/freddie-marriage-iYQC9xWMvw4-unsplash.jpg") alt="kitten");
 }
 
 .navBar button {
