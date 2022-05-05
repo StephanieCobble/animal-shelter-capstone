@@ -6,6 +6,9 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import AdoptionFormPage from "./pages/AdoptionFormPage/AdoptionFormPage";
+import AdoptPage from "./pages/AdoptPage/AdoptPage";
+import LostPetsPage from "./pages/LostPetsPage/LostPetsPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -14,7 +17,7 @@ import AccountPage from "./pages/AccountPage/AccountPage";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-import AdoptionFormPage from "./pages/AdoptionFormPage/AdoptionFormPage";
+
 
 
 function App() {
@@ -22,17 +25,19 @@ function App() {
     <div>
       <Navbar />
       <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/adopt" element={<AdoptPage />} />
+        <Route path="/lost" element={<LostPetsPage />} />
         <Route
-          path="/"
+          path="/account"
           element={
             <PrivateRoute>
-              <HomePage />
+              <AccountPage />
             </PrivateRoute>
           }
         />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/account" element={<PrivateRoute><AccountPage /></PrivateRoute>} />
         {/* <Route path="/form" element={<PrivateRoute><AdoptionFormPage /></PrivateRoute>} /> */}
       </Routes>
       <Footer />
