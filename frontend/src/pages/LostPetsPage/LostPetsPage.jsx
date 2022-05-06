@@ -21,6 +21,7 @@ const LostPetsPage = () => {
 
   return (
     <div>
+        <h1 className="container" >Have You Seen Me?</h1>
       {pets &&
         pets.map((pet) => (
           <p key={pet.id}>

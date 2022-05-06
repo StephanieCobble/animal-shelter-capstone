@@ -1,9 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+// import DropdownButton from 'react-bootstrap/DropdownButton'
+// import { Dropdown } from "bootstrap";
+// import Select from "react-select";
+import "./AdoptPage.css";
+
+import Dropdown from "./Dropdown";
 
 const AdoptPage = () => {
   const [pets, setPets] = useState([]);
@@ -22,33 +28,36 @@ const AdoptPage = () => {
     getAnimals();
   }, []);
 
+  //   const [open, setOpen] = useState(false)
+  //   var onChange;
+  //   var prompt="Select...";
+
+  const [value, setValue] = useState(null);
+
   return (
-    <div  >
-      <div className="container" >
-        
-        <div className="dropdown">
-          <button
-            className="btn btn-primary dropdown-toggle"
-            type="button"
-            data-toggle="dropdown"
-            
-          >
-            Filter
-            <span className="caret"></span>
-          </button>
-          <ul className="dropdown-menu">
-            <li>
-              <a href="#">HTML</a>
-            </li>
-            <li>
-              <a href="#">CSS</a>
-            </li>
-            <li>
-              <a href="#">JavaScript</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <>
+      <Dropdown
+        prompt="Select..."
+        options={pets && pets}
+        id='id'
+        label='breed'
+        value={value}
+        onChange={(val) => setValue(val)}
+      />
+
+      <input
+        placeholder="Enter Search"
+        className="search-bar"
+        onChange={(event) => setQuery(event.target.value)}
+      />
+
+      <h1 className="container">Adoptable Pets</h1>
+
+      {/* <DropdownButton  id="dropdown-basic-button" title="Species">
+        <Dropdown.Item onChange={(event) => setQuery(event.target.value)} >Dog</Dropdown.Item>
+        <Dropdown.Item onChange={(event) => setQuery(event.target.value)} >Cat</Dropdown.Item>
+        <Dropdown.Item onChange={(event) => setQuery(event.target.value)} >...</Dropdown.Item>
+      </DropdownButton> */}
 
       <div>
         {pets &&
@@ -56,22 +65,30 @@ const AdoptPage = () => {
             .filter((pet) => {
               if (query === "") {
                 return pet;
-              } else if (pet.id.includes(query)) {
+              } else if (
+                pet.species.toLowerCase().includes(query.toLowerCase())
+              ) {
+                return pet;
+              } else if (
+                pet.breed.toLowerCase().includes(query.toLowerCase())
+              ) {
+                return pet;
+              } else if (pet.age.toLowerCase().includes(query.toLowerCase())) {
+                return pet;
+              } else if (pet.sex.toLowerCase().includes(query.toLowerCase())) {
                 return pet;
               }
             })
-
-            .map((pet) => (
-              <p key={pet.id}>
+            .map((pet, index) => (
+              <div key={index}>
                 <h3> Name: {pet.name} </h3> <h4> Species: {pet.species} </h4>{" "}
                 <h4>Breed: {pet.breed} </h4> <h4>Male/Female: {pet.sex} </h4>{" "}
                 <h4>Age: {pet.age} </h4> <h4> {pet.image}</h4>{" "}
                 <h6> {pet.description}</h6>
-                <p> </p>
-              </p>
+              </div>
             ))}
       </div>
-    </div>
+    </>
   );
 };
 
