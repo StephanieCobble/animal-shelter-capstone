@@ -9,6 +9,7 @@ class AdoptPage extends Component {
     this.state = {
       pets: [],
       showmodal: false,
+      query: '',
       results: [],
     };
     this.filterBySpecies = this.filterBySpecies.bind(this);
@@ -16,7 +17,7 @@ class AdoptPage extends Component {
     this.filterByAge = this.filterByAge.bind(this);
     this.filterBySex = this.filterBySex.bind(this);
   }
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     this.getAnimals();
   }
   async getAnimals() {
@@ -25,72 +26,130 @@ class AdoptPage extends Component {
   }
 
   filterBySpecies() {
-    this.state.pets.filter((p) => {
-      return p.species
-      .includes(this.state.query);
-    });
+    let res = this.state.pets.filter((p) => {
+        return p.species.toLowerCase().includes(this.state.query.toLowerCase())})
+        console.log(res)
+        let array = []
+        res.forEach(element => {
+            array.push({
+                name: element.name,
+                species: element.species,
+                breed: element.breed,
+                sex: element.sex,
+                age: element.age,
+                image: element.image,
+                description: element.description
+            })})
+            console.log(array)
+            this.setState({results: array})
   }
   filterByBreed() {
     let res = this.state.pets.filter((p) => {
-      return p.breed.toLowerCase().includes(this.state.query.toLowerCase());
-    });
+      return p.breed.toLowerCase().includes(this.state.query.toLowerCase())})
+      console.log(res)
+      let array = []
+      res.forEach(element => {
+          array.push({
+              name: element.name,
+              species: element.species,
+              breed: element.breed,
+              sex: element.sex,
+              age: element.age,
+              image: element.image,
+              description: element.description
+          })})
+          console.log(array)
+          this.setState({results: array})
   }
   filterByAge() {
     let res = this.state.pets.filter((p) => {
-      return p.age.toLowerCase().includes(this.state.query.toLowerCase());
-    });
+      return p.age.toLowerCase().includes(this.state.query.toLowerCase())})
+      console.log(res)
+      let array = []
+      res.forEach(element => {
+          array.push({
+              name: element.name,
+              species: element.species,
+              breed: element.breed,
+              sex: element.sex,
+              age: element.age,
+              image: element.image,
+              description: element.description
+          })})
+          console.log(array)
+          this.setState({results: array})
   }
   filterBySex() {
     let res = this.state.pets.filter((p) => {
-      return p.sex.toLowerCase().includes(this.state.query.toLowerCase());
-    });
+      return p.sex.toLowerCase().includes(this.state.query.toLowerCase())})
+      console.log(res)
+      let array = []
+      res.forEach(element => {
+          array.push({
+              name: element.name,
+              species: element.species,
+              breed: element.breed,
+              sex: element.sex,
+              age: element.age,
+              image: element.image,
+              description: element.description
+          })})
+          console.log(array)
+          this.setState({results: array})
   }
 
-render() {
-    return(
-        <div className="input-group">
-            <div className="input-group-append"><label id="SearchWord">Search</label></div>
-            <input onChange={(e) => this.setState({query: e.target.value})} value={this.state.query} name="query" id="query" type="text" />
-            <DropdownButton id="dropdown-basic-button" title="Search By">
-                <Dropdown.Item onClick={this.filterBySpecies}>Species</Dropdown.Item>
-                <Dropdown.Item onClick={this.filterByBreed}>Breed</Dropdown.Item>
-                <Dropdown.Item onClick={this.filterByAge}>Age</Dropdown.Item>
-                <Dropdown.Item onClick={this.filterBySex}>Sex</Dropdown.Item>
-            </DropdownButton>
-            <br />
-            <table>
-                <thead>
-                    <tr>
-                    <th>Species</th>
-                    <th>Breed</th>
-                    <th>Age</th>
-                    <th>Sex</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {this.state.results.map((pet, index) => (
-                            <tr key={index}>
-                                <td>{pet.name}</td>
-                                <td>{pet.species}</td>
-                                <td>{pet.breed}</td>
-                                <td>{pet.sex}</td>
-                                <td>{pet.age}</td>
-                                <td>{pet.image}</td>
-                                <td>{pet.description}</td>
-                            </tr>
-                    ))}
-                </tbody>
-            </table>
+  render() {
+    return (
+      <div className="input-group">
+        <div className="input-group-append">
+          <label id="SearchWord">Search</label>
         </div>
-        
-    ); 
-}
-
+        <input
+          onChange={(e) => this.setState({ query: e.target.value })}
+          value={this.state.query}
+          name="query"
+          id="query"
+          type="text"
+        />
+        <DropdownButton id="dropdown-basic-button" title="Search By">
+          <Dropdown.Item onClick={this.filterBySpecies}>Species</Dropdown.Item>
+          <Dropdown.Item onClick={this.filterByBreed}>Breed</Dropdown.Item>
+          <Dropdown.Item onClick={this.filterByAge}>Age</Dropdown.Item>
+          <Dropdown.Item onClick={this.filterBySex}>Sex</Dropdown.Item>
+        </DropdownButton>
+        <br />
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Species</th>
+              <th>Breed</th>
+              <th>Sex</th>
+              <th>Age</th>
+              <th>Image</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.results.map((pet, index) => (
+              <tr key={index}>
+                <td>{pet.name}</td>
+                <td>{pet.species}</td>
+                <td>{pet.breed}</td>
+                <td>{pet.sex}</td>
+                <td>{pet.age}</td>
+                <td>{pet.image}</td>
+                <td>{pet.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
 }
 
 export default AdoptPage;
-
-
 
 // import React, { Component } from "react";
 // import { useEffect, useState } from "react";
