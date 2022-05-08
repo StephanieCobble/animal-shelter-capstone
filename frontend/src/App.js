@@ -8,7 +8,9 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AdoptionFormPage from "./pages/AdoptionFormPage/AdoptionFormPage";
 import AdoptPage from "./pages/AdoptPage/AdoptPage";
-import LostPetsPage from "./pages/LostPetsPage/LostPetsPage";
+import LostPetsPage from "./pages/LostPetsPage/SearchLostPetsPage";
+import SearchAdoptPage from "./pages/AdoptPage/SearchAdoptPage";
+import SearchLostPetsPage from "./pages/LostPetsPage/SearchLostPetsPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -30,6 +32,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/adopt" element={<AdoptPage />} />
         <Route path="/lost" element={<LostPetsPage />} />
+        <Route path="/adoptsearch" element={<SearchAdoptPage />} />
+        <Route path="/lostsearch" element={<SearchLostPetsPage />} />
         <Route
           path="/account"
           element={
