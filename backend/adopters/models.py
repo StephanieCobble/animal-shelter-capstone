@@ -9,7 +9,7 @@ class Adopter(models.Model):
     street = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     state = models.CharField(max_length=50)
-    zipcode = models.IntegerField()
+    zipcode = models.CharField(max_length=50)
 
 
 

@@ -106,7 +106,7 @@ class SearchLostPetsPage extends Component {
     return (
       <div className="input-group">
         <div className="input-group-append">
-          <label id="SearchWord">Search </label>
+          <label>Search </label>
         </div>
         <input
           onChange={(e) => this.setState({ query: e.target.value })}

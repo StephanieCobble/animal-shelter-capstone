@@ -23,6 +23,18 @@ const Navbar = () => {
             <p className="font2">Pet Rescue</p>
           </Link>
         </li>
+        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+          <p >Home</p>
+        </Link>
+        <Link to="/adopt" style={{ textDecoration: "none", color: "white" }}>
+          <p >Adopt</p>
+        </Link>
+        <Link to="/lost" style={{ textDecoration: "none", color: "white" }}>
+          <p >Lost Pets</p>
+        </Link>
+        <Link to="/account" style={{ textDecoration: "none", color: "white" }}>
+          <p >Account</p>
+        </Link>
         <li>
           {user ? (
             <button onClick={logoutUser}>Logout</button>
