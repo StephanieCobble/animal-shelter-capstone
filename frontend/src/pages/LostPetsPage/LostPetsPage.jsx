@@ -1,50 +1,158 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
-import { useNavigate, Link } from "react-router-dom";
+import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
+import { DropdownButton, Dropdown } from "react-bootstrap";
 import axios from "axios";
 
-const LostPetsPage = () => {
-  const [pets, setPets] = useState([]);
-
-  useEffect(() => {
-    const getAnimals = async () => {
-      try {
-        let response = await axios.get(`http://127.0.0.1:8000/api/lost/`);
-        setPets(response.data);
-      } catch (error) {
-        console.log(error.message);
-      }
+class LostPetsPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pets: [],
+      showmodal: false,
+      query: '',
+      results: [],
     };
-    getAnimals();
-  }, []);
+    this.filterBySpecies = this.filterBySpecies.bind(this);
+    this.filterByBreed = this.filterByBreed.bind(this);
+    this.filterByAge = this.filterByAge.bind(this);
+    this.filterBySex = this.filterBySex.bind(this);
+  }
+  componentDidMount() {
+    this.getAnimals();
+  }
+  async getAnimals() {
+    let response = await axios.get(`http://127.0.0.1:8000/api/lost/`);
+    this.setState({ pets: response.data });
+  }
 
-  return (
-    <div>
-        <h1 className="container" >Have You Seen Me?</h1>
-      {pets &&
-        pets.map((pet) => (
-          <p key={pet.id}>
-           <h3> Name: {pet.name} </h3>
-            {" "}
-            <h4> Species: {pet.species} </h4>
-            {" "}
-            <h4>Breed: {pet.breed} </h4>
-            {" "}
-            <h4>Male/Female: {pet.sex} </h4>
-            {" "}
-            <h4>Age: {pet.age} </h4>
-            {" "}
-            <h4>  {pet.image}</h4>
-            {" "}
-            <h6>  {pet.description}</h6>
-           <p> {" "}</p>
-            <h6>Date Found: {pet.date_found}</h6>
-           <p> {" "}</p>
-          </p>
-        ))}
-    </div>
-  );
-};
+  filterBySpecies() {
+    let res = this.state.pets.filter((p) => {
+        return p.species.toLowerCase().includes(this.state.query.toLowerCase())})
+        console.log(res)
+        let array = []
+        res.forEach(element => {
+            array.push({
+                name: element.name,
+                species: element.species,
+                breed: element.breed,
+                sex: element.sex,
+                age: element.age,
+                image: element.image,
+                description: element.description,
+                date_found: element.date_found
+            })})
+            console.log(array)
+            this.setState({results: array})
+  }
+  filterByBreed() {
+    let res = this.state.pets.filter((p) => {
+      return p.breed.toLowerCase().includes(this.state.query.toLowerCase())})
+      console.log(res)
+      let array = []
+      res.forEach(element => {
+          array.push({
+              name: element.name,
+              species: element.species,
+              breed: element.breed,
+              sex: element.sex,
+              age: element.age,
+              image: element.image,
+              description: element.description,
+              date_found: element.date_found
+          })})
+          console.log(array)
+          this.setState({results: array})
+  }
+  filterByAge() {
+    let res = this.state.pets.filter((p) => {
+      return p.age.toLowerCase().includes(this.state.query.toLowerCase())})
+      console.log(res)
+      let array = []
+      res.forEach(element => {
+          array.push({
+              name: element.name,
+              species: element.species,
+              breed: element.breed,
+              sex: element.sex,
+              age: element.age,
+              image: element.image,
+              description: element.description,
+              date_found: element.date_found
+          })})
+          console.log(array)
+          this.setState({results: array})
+  }
+  filterBySex() {
+    let res = this.state.pets.filter((p) => {
+      return p.sex.toLowerCase().includes(this.state.query.toLowerCase())})
+      console.log(res)
+      let array = []
+      res.forEach(element => {
+          array.push({
+              name: element.name,
+              species: element.species,
+              breed: element.breed,
+              sex: element.sex,
+              age: element.age,
+              image: element.image,
+              description: element.description,
+              date_found: element.date_found
+          })})
+          console.log(array)
+          this.setState({results: array})
+  }
+
+  render() {
+    return (
+      <div className="input-group">
+        <div className="input-group-append">
+          <label id="SearchWord">Search </label>
+        </div>
+        <input
+          onChange={(e) => this.setState({ query: e.target.value })}
+          value={this.state.query}
+          name="query"
+          id="query"
+          type="text"
+        />
+        <DropdownButton id="dropdown-basic-button" title="Search By">
+          <Dropdown.Item onClick={this.filterBySpecies}>Species</Dropdown.Item>
+          <Dropdown.Item onClick={this.filterByBreed}>Breed</Dropdown.Item>
+          <Dropdown.Item onClick={this.filterByAge}>Age</Dropdown.Item>
+          <Dropdown.Item onClick={this.filterBySex}>Sex</Dropdown.Item>
+        </DropdownButton>
+        <br />
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Species</th>
+              <th>Breed</th>
+              <th>Sex</th>
+              <th>Age</th>
+              <th>Image</th>
+              <th>Description</th>
+              <th>Date Found</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.results.map((pet, index) => (
+              <tr key={index}>
+                <td>{pet.name}</td>
+                <td>{pet.species}</td>
+                <td>{pet.breed}</td>
+                <td>{pet.sex}</td>
+                <td>{pet.age}</td>
+                <td>{pet.image}</td>
+                <td>{pet.description}</td>
+                <td>{pet.date_found}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+}
 
 export default LostPetsPage;
