@@ -12,6 +12,7 @@ import "./AdoptPage.css";
 
 const AdoptPage = () => {
   const [pets, setPets] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getAnimals = async () => {
@@ -28,6 +29,11 @@ const AdoptPage = () => {
   return (
     <>
       <h1 className="container">Adoptable Pets</h1>
+
+      <Link to="/adoptsearch" style={{textDecoraction: "none"}}>
+          <p className="font2">Search Adoptable Pets</p>
+      </Link>
+
 
       <div>
         {pets &&

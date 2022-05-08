@@ -8,7 +8,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AdoptionFormPage from "./pages/AdoptionFormPage/AdoptionFormPage";
 import AdoptPage from "./pages/AdoptPage/AdoptPage";
-import LostPetsPage from "./pages/LostPetsPage/SearchLostPetsPage";
+import LostPetsPage from "./pages/LostPetsPage/LostPetsPage";
 import SearchAdoptPage from "./pages/AdoptPage/SearchAdoptPage";
 import SearchLostPetsPage from "./pages/LostPetsPage/SearchLostPetsPage";
 
