@@ -151,6 +151,12 @@ let initialValues = {
   city: "",
   state: "",
   zipcode: "",
+  phone: "",
+  pets: "",
+  pets_age: "",
+  pets_species: "",
+  pets_breed: "",
+  pets_sex: "",
 };
 
 const AccountPage = () => {
@@ -197,9 +203,9 @@ const AccountPage = () => {
   }
 
   return (
-    <div className="container">
-      <h1>Create a New Adopter for {user.username} </h1>
-      <form className="form" onSubmit={handleSubmit}>
+    <div >
+      <h1>Create a New Adoption form for {user.username} </h1>
+      <form  onSubmit={handleSubmit}>
         <label>
           User: {user.id}
           <input
@@ -263,15 +269,70 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
+        <label>
+          Phone:{" "}
+          <input
+            type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Pets:{" "}
+          <input
+            type="text"
+            name="pets"
+            value={formData.pets}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Pet's Age:{" "}
+          <input
+            type="text"
+            name="pets_age"
+            value={formData.pets_age}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Pet's Species:{" "}
+          <input
+            type="text"
+            name="pets_species"
+            value={formData.pets_species}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Pet's Breed:{" "}
+          <input
+            type="text"
+            name="pets_breed"
+            value={formData.pets_breed}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Pet's Gender:{" "}
+          <input
+            type="text"
+            name="pets_sex"
+            value={formData.pets_sex}
+            onChange={handleInputChange}
+          />
+        </label>
         <button>Submit</button>
       </form>
       {adopters &&
         adopters
         .map((adopter, index) => (
-          <p key={index}>
-          <h3> User ID: {adopter.user} Name: {adopter.first_name} {adopter.last_name}{" "}</h3>
-          <h6> Address: {adopter.street} {adopter.city} {adopter.state} {adopter.zipcode}</h6> 
-          </p>
+          <div key={index}>
+          <h3> User ID: {adopter.user} | Name: {adopter.first_name} {adopter.last_name}{" "}</h3>
+          <h6> Address: {adopter.street} {adopter.city} {adopter.state} {adopter.zipcode} Phone: {adopter.phone} </h6> 
+          <h6> Pet Info: {adopter.pets} {adopter.pets_age} {adopter.pets_species} {adopter.pets_breed} {adopter.pets_sex} </h6>
+          </div>
         ))}
     </div>
   );
