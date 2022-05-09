@@ -11,11 +11,13 @@ import AdoptPage from "./pages/AdoptPage/AdoptPage";
 import LostPetsPage from "./pages/LostPetsPage/LostPetsPage";
 import SearchAdoptPage from "./pages/AdoptPage/SearchAdoptPage";
 import SearchLostPetsPage from "./pages/LostPetsPage/SearchLostPetsPage";
+import AccountPage from "./pages/AccountPage/AccountPage";
+import EmployeeAccountPage from "./pages/AccountPage/EmployeeAccountPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import AccountPage from "./pages/AccountPage/AccountPage";
+
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -39,6 +41,14 @@ function App() {
           element={
             <PrivateRoute>
               <AccountPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/empaccount"
+          element={
+            <PrivateRoute>
+              <EmployeeAccountPage />
             </PrivateRoute>
           }
         />
