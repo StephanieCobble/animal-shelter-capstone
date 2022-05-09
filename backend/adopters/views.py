@@ -49,3 +49,9 @@ class AdopterDetail(APIView, IsAuthenticated):
         adopter.delete()
         return Response(delete_conf, status=status.HTTP_200_OK)
 
+class UserFK(APIView, IsAuthenticated):
+    def get(self, request, fk, format=None):
+        adopter= Adopter.objects.filter(user=fk)
+        serializer = AdopterSerializer(adopter, many=True)
+        return Response(serializer.data)
+
