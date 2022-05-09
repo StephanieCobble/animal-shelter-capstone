@@ -13,6 +13,7 @@ import SearchAdoptPage from "./pages/AdoptPage/SearchAdoptPage";
 import SearchLostPetsPage from "./pages/LostPetsPage/SearchLostPetsPage";
 import AccountPage from "./pages/AccountPage/AccountPage";
 import EmployeeAccountPage from "./pages/AccountPage/EmployeeAccountPage";
+import AddNewAdoptable from "./pages/AdoptPage/AddNewAdoptable";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -44,11 +45,20 @@ function App() {
             </PrivateRoute>
           }
         />
+        
         <Route
           path="/empaccount"
           element={
             <PrivateRoute>
               <EmployeeAccountPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/empaddpet"
+          element={
+            <PrivateRoute>
+              <AddNewAdoptable />
             </PrivateRoute>
           }
         />

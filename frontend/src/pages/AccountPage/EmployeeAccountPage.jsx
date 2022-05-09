@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 
 import axios from "axios";
+import { Link } from "react-router-dom";
+import AddNewAdoptable from "../AdoptPage/AddNewAdoptable";
 
 
 
@@ -31,7 +33,9 @@ const EmployeeAccountPage = () => {
         <div>
             <h1>Employee Account Page</h1>
             <div> add links to add/delete/update pets (adoptable + lost)</div>
-
+        <Link to="/empaddpet">
+            Add New Adoptable Pet
+        </Link>
             <div>
             {adopters &&
         adopters
