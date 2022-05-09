@@ -45,7 +45,7 @@ const AdoptPage = () => {
                 <h4>Breed: {pet.breed} </h4> <h4>Male/Female: {pet.sex} </h4>{" "}
                 <h4>Age: {pet.age} </h4> <h4> {pet.image}</h4>{" "}
                 <h6> {pet.description}</h6>
-                <EditAdoptable/>
+                {/* <EditAdoptable/> */}
               </div>
             ))}
       </div>
