@@ -16,6 +16,6 @@ class Adopter(models.Model):
     pets_species = models.CharField(max_length=50, default=None)
     pets_breed = models.CharField(max_length=50, default=None)
     pets_sex = models.CharField(max_length=50, default=None)
-
+    adoption_date = models.DateField(null=True)
 
 
