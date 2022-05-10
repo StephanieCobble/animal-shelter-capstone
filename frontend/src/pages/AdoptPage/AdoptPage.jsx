@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import Select from "react-select";
 import "./AdoptPage.css";
 import EditAdoptable from "./EditAdoptable";
+import DeleteAdoptable from "./DeleteAdoptable";
 
 
 const AdoptPage = () => {
@@ -46,6 +47,7 @@ const AdoptPage = () => {
                 <h4>Age: {pet.age} </h4> <h4> {pet.image}</h4>{" "}
                 <h6> {pet.description}</h6>
                 <EditAdoptable pet={pet} />
+                <DeleteAdoptable pet={pet} />
               </div>
             ))}
       </div>
