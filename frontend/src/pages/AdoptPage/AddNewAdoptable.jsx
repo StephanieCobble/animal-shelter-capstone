@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import { useEffect, useState } from "react";
+import ImageUpload from "./ImageUpload"
 
 let initialValues = {
     name: "",
@@ -11,7 +12,7 @@ let initialValues = {
     breed: "",
     sex: "", 
     age: "",
-    image: "",
+    image: {},
     description: ""
 
 }
@@ -91,13 +92,12 @@ const AddNewAdoptable = () => {
           />
         </label>
         <label>
-          Image:{" "}
-          <input
-            type="text"
-            name="image"
-            value={formData.image}
-            onChange={handleInputChange}
-          />
+          Image:
+          <ImageUpload type='file' accept="image/*" value={formData.image}
+            onChange={handleInputChange}/>
+         
+            
+          
         </label>
         <label>
           Description:{" "}

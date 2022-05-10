@@ -7,5 +7,5 @@ class Animal(models.Model):
     breed = models.CharField(max_length=255)
     sex = models.CharField(max_length=255)
     age = models.CharField(max_length=255)
-    image = models.CharField(max_length=3000, default='')
+    image = models.FileField(null=True)
     description = models.CharField(max_length=1000)
