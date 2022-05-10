@@ -36,6 +36,10 @@ const EmployeeAccountPage = () => {
         <Link to="/empaddpet">
             Add New Adoptable Pet
         </Link>
+        <br/>
+        <Link to="/empaddlost">
+            Add New Lost Pet
+        </Link>
             <div>
             {adopters &&
         adopters

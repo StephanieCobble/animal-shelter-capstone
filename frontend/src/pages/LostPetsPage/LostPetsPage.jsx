@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import EditLost from "./EditLost";
 // import DropdownButton from 'react-bootstrap/DropdownButton'
 // import { Dropdown } from "bootstrap";
 // import Select from "react-select";
@@ -43,6 +44,7 @@ const LostPetsPage = () => {
                 <h4>Age: {pet.age} </h4> <h4> {pet.image}</h4>{" "}
                 <h6> {pet.description}</h6> 
                 <h6> {pet.date_found}</h6> 
+                <EditLost pet={pet}/>
               </div>
             ))}
       </div>

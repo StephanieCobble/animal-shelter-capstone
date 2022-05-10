@@ -14,6 +14,8 @@ import SearchLostPetsPage from "./pages/LostPetsPage/SearchLostPetsPage";
 import AccountPage from "./pages/AccountPage/AccountPage";
 import EmployeeAccountPage from "./pages/AccountPage/EmployeeAccountPage";
 import AddNewAdoptable from "./pages/AdoptPage/AddNewAdoptable";
+import AddNewLost from "./pages/LostPetsPage/AddNewLost";
+import EditAdoptable from "./pages/AdoptPage/EditAdoptable";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -62,6 +64,22 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/empaddlost"
+          element={
+            <PrivateRoute>
+              <AddNewLost />
+            </PrivateRoute>
+          }
+        />
+        {/* <Route
+          path="/empeditpet"
+          element={
+            <PrivateRoute>
+              <EditAdoptable />
+            </PrivateRoute>
+          }
+        /> */}
         {/* <Route path="/form" element={<PrivateRoute><AdoptionFormPage /></PrivateRoute>} /> */}
       </Routes>
       <Footer />

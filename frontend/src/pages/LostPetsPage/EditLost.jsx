@@ -8,7 +8,7 @@ import { Modal } from "react-bootstrap";
 
 
 
-const EditAdoptable = (props) => {
+const EditLost = (props) => {
   
   const [show, setShow] = useState(false);
 
@@ -26,6 +26,7 @@ const EditAdoptable = (props) => {
   const [age, setAge] = useState(props.pet.age);
   const [image, setImage] = useState(props.pet.image);
   const [description, setDescription] = useState(props.pet.description);
+  const [dateFound, setDateFound] = useState(props.pet.date_found);
 
   function handleSubmit(event) {
       event.preventDefault();
@@ -38,21 +39,19 @@ const EditAdoptable = (props) => {
           age: age,
           image: image,
           description: description,
+          date_found: dateFound,
       };
       updatePet(updatedPet)
   }
 
   async function updatePet(updatedPet){
-      let response = await axios.put(`http://127.0.0.1:8000/api/animals/${updatedPet.id}/`, updatedPet);
+      let response = await axios.put(`http://127.0.0.1:8000/api/lost/${updatedPet.id}/`, updatedPet);
       if(response.status === 201){
         window.location.reload();
       } else {
           alert('Please try again!')
       }
   }
-
-
-
     return(
       <div>
         <Button className="modal-button" variant="primary" onClick={handleShow}>Edit</Button>
@@ -100,6 +99,10 @@ const EditAdoptable = (props) => {
                   <label>Description</label>
                   <input onChange={(event) => setDescription(event.target.value)} value={description} type="text" /> 
                 </div>
+                <div> 
+                  <label>Date Found</label>
+                  <input onChange={(event) => setDateFound(event.target.value)} value={dateFound} type="text" /> 
+                </div>
 
                 </form>
                 </div>
@@ -117,4 +120,4 @@ const EditAdoptable = (props) => {
   }
 
 
-export default EditAdoptable;
+export default EditLost;
