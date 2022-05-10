@@ -5,7 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import AddNewAdoptable from "../AdoptPage/AddNewAdoptable";
-import AnimalAdoptersPage from "../AnimalAdoptersPage/AnimalAdoptersPage";
+
 
 
 
@@ -48,10 +48,10 @@ const EmployeeAccountPage = () => {
           <div key={index}>
           <h3> User ID: {adopter.user} | Name: {adopter.first_name} {adopter.last_name}{" "}</h3>
           <h6> Address: {adopter.street} {adopter.city} {adopter.state} {adopter.zipcode} Phone: {adopter.phone} </h6> 
-          <h6> Pet Info: {adopter.pets} {adopter.pets_age} {adopter.pets_species} {adopter.pets_breed} {adopter.pets_sex} </h6>
+          <h6> Pet Info: {adopter.pets} {adopter.pets_age} {adopter.pets_species} {adopter.pets_breed} {adopter.pets_sex} {adopter.adoption_date} </h6>
           </div>
         ))}
-        <div> < AnimalAdoptersPage/></div>
+        
         </div>
 
 

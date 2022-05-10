@@ -1,140 +1,3 @@
-// import React from "react";
-// import { useEffect, useState } from "react";
-// import useAuth from "../../hooks/useAuth";
-
-// import axios from "axios";
-
-// const AccountPage = () => {
-//   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
-//   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
-//   //TODO: Add an AddCars Page to add a car for a logged in user's garage
-//   const [user, token] = useAuth();
-//   const [adopters, setAdopters] = useState([]);
-
-//   useEffect(() => {
-//     const fetchAdopters = async () => {
-//       try {
-//         let response = await axios.get(`http://127.0.0.1:8000/api/adopters/`, {
-//           headers: {
-//             Authorization: "Bearer " + token,
-//           },
-//         });
-//         setAdopters(response.data);
-//       } catch (error) {
-//         console.log(error.message);
-//       }
-//     };
-//     fetchAdopters();
-//   }, [token]);
-
-//   const [firstName, setFirstName] = useState("");
-//   const [lastName, setLastName] = useState("");
-//   const [street, setStreet] = useState("");
-//   const [city, setCity] = useState("");
-//   const [state, setState] = useState("");
-//   const [zipcode, setZipcode] = useState("");
-
-//   function handleSubmit(event) {
-//     event.preventDefault();
-//     // let user = user.id
-//     let newAdopter = {
-//       firstName: firstName,
-//       lastName: lastName,
-//       street: street,
-//       city: city,
-//       state: state,
-//       zipcode: zipcode,
-//     };
-//     setFirstName("");
-//     setLastName("");
-//     setStreet("");
-//     setCity("");
-//     setState("");
-//     setZipcode("");
-//     createAdopter(newAdopter);
-//   }
-
-//   async function createAdopter(newAdopter) {
-//     let res = await axios.post(
-//       `http://127.0.0.1:8000/api/adopters/account/` , newAdopter
-//     );
-//     if (res.status === 201) {
-//       await adopters;
-//       window.location.reload();
-//     }
-//   }
-
-//   return (
-//     <div className="container">
-//       <form onSubmit={handleSubmit} className="app">
-//         {/* <label className="add-song-font">User</label>
-//       <input
-//       // placeholder="First Name"
-//         type="string"
-//         value={user.id}
-//         // onChange={(event) => setFirstName(event.target.value)}
-//       /> */}
-//         <label className="add-song-font">First Name</label>
-//         <input
-//           placeholder="First Name"
-//           type="string"
-//           value={firstName}
-//           onChange={(event) => setFirstName(event.target.value)}
-//         />
-//         <label className="add-song-font">Last Name</label>
-//         <input
-//           placeholder="Last Name"
-//           type="string"
-//           value={lastName}
-//           onChange={(event) => setLastName(event.target.value)}
-//         />
-//         <label className="add-song-font">Street</label>
-//         <input
-//           placeholder="Street"
-//           type="string"
-//           value={street}
-//           onChange={(event) => setStreet(event.target.value)}
-//         />
-//         <label className="add-song-font">City</label>
-//         <input
-//           placeholder="City"
-//           type="string"
-//           value={city}
-//           onChange={(event) => setCity(event.target.value)}
-//         />
-//         <label className="add-song-font">State</label>
-//         <input
-//           placeholder="State"
-//           type="string"
-//           value={state}
-//           onChange={(event) => setState(event.target.value)}
-//         />
-//         <label className="add-song-font">Zipcode</label>
-//         <input
-//           placeholder="Zipcode"
-//           type="string"
-//           value={zipcode}
-//           onChange={(event) => setZipcode(event.target.value)}
-//         />
-//         <button className="add-song-button" color="white" type="submit">
-//           Create Adopter
-//         </button>
-//       </form>
-
-//       <h1>Home Page for {user.username}!</h1>
-
-//       {adopters &&
-//         adopters.map((adopter, index) => (
-//           <p key={index[0]}>
-//             {adopter.user} {adopter.first_name} {adopter.last_name}{" "}
-//             {adopter.street} {adopter.city} {adopter.state} {adopter.zipcode}
-//           </p>
-//         ))}
-//     </div>
-//   );
-// };
-
-// export default AccountPage;
 
 import axios from "axios";
 import reactDom from "react-dom";
@@ -158,6 +21,7 @@ let initialValues = {
   pets_species: "",
   pets_breed: "",
   pets_sex: "",
+  adoption_date: ""
 };
 
 const AccountPage = () => {
@@ -324,6 +188,16 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
+        <label>
+          Adoption Date:{" "}
+          <input
+          placeholder="YYYY-MM-DD"
+            type="text"
+            name="adoption_date"
+            value={formData.adoption_date}
+            onChange={handleInputChange}
+          />
+        </label>
         <button>Submit</button>
       </form>
       {adopters &&
@@ -332,7 +206,7 @@ const AccountPage = () => {
           <div key={index}>
           <h3> User ID: {adopter.user} | Name: {adopter.first_name} {adopter.last_name}{" "}</h3>
           <h6> Address: {adopter.street} {adopter.city} {adopter.state} {adopter.zipcode} Phone: {adopter.phone} </h6> 
-          <h6> Pet Info: {adopter.pets} {adopter.pets_age} {adopter.pets_species} {adopter.pets_breed} {adopter.pets_sex} </h6>
+          <h6> Pet Info: {adopter.pets} {adopter.pets_age} {adopter.pets_species} {adopter.pets_breed} {adopter.pets_sex} {adopter.adoption_date} </h6>
           </div>
         ))}
     </div>
