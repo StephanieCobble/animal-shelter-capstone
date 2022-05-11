@@ -11,7 +11,7 @@ let initialValues = {
     breed: "",
     sex: "", 
     age: "",
-    image: {},
+    image: "",
     description: "",
     date_found: "",
 
@@ -92,9 +92,9 @@ const AddNewLost = () => {
           />
         </label>
         <label>
-          Image:{}
+          Image:{" "}
           <input
-            type="image"
+            type="url"
             name="image"
             value={formData.image}
             onChange={handleInputChange}

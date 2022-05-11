@@ -12,7 +12,7 @@ let initialValues = {
     breed: "",
     sex: "", 
     age: "",
-    image: {},
+    image: "",
     description: ""
 
 }
@@ -92,12 +92,13 @@ const AddNewAdoptable = () => {
           />
         </label>
         <label>
-          Image:
-          <ImageUpload type='file' accept="image/*" value={formData.image}
-            onChange={handleInputChange}/>
-         
-            
-          
+          Image:{" "}
+         <input 
+          type='url' 
+          name="image"
+          value={formData.image}
+          onChange={handleInputChange}
+          />
         </label>
         <label>
           Description:{" "}

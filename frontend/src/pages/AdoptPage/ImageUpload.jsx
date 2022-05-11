@@ -5,26 +5,26 @@ import ImageUploading from "react-images-uploading";
 import "./ImageUpload.css";
 
 const ImageUpload = () => {
-  const [images, setImages] = React.useState([]);
+  const [image, setImage] = React.useState([]);
   const maxNumber = 1000;
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
     console.log(imageList, addUpdateIndex);
-    setImages(imageList);
+    setImage(imageList);
   };
 
   return (
     <div className="App">
       <ImageUploading
         multiple
-        value={images}
+        value={image}
         onChange={onChange}
         maxNumber={maxNumber}
         dataURLKey="data_url"
       >
         {({
           imageList,
-          onImageUpload,
+          onImageUpload, 
           onImageRemoveAll,
           onImageUpdate,
           onImageRemove,

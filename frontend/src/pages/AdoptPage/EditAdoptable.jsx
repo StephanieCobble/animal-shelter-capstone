@@ -94,7 +94,7 @@ const EditAdoptable = (props) => {
                  </div>
                 <div>
                   <label> Image</label>
-                    <input onChange={(event) => setImage(event.target.value)} value={image} type="text" /> 
+                    <input onChange={(event) => setImage(event.target.value)} value={image} type="url" /> 
                 </div>{" "}
                 <div> 
                   <label>Description</label>
