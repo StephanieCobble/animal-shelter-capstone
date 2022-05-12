@@ -12,11 +12,13 @@ li {
   background: rgb(192, 159, 245);
   box-shadow: 4px 2px 5px gray;
   color: white;
-  margin-bottom: 2rem;
-  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+  /* padding: 1rem 1rem; */
+  padding-right: 1rem;
   background-image: url("/../frontend/Assets/navBar/navbar.png");
+  background-size: 51% 78%;
   background-repeat:no-repeat;
-  background-position:  75%;
+  background-position: 70% 1%;
 }
 
 /* .navImg{
@@ -45,7 +47,8 @@ li {
   background: transparent;
   border: 2px solid white;
   color: white;
-  padding: 0.4rem 0.5rem;
+  padding: 0.1rem 0.7rem;
+  border-radius: 20%;
 }
 
 .navBar button:hover {
@@ -62,10 +65,19 @@ li {
 .font{
   font-family: Georgia, serif;
   font-size: 50px;
+  /* padding: 7%; */
+  padding-bottom: 1%;
+  margin-bottom: .01%;
 }
 .font2{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 21px;
-  background-position: 50%;
-  
+  padding-top: .01%;
+  margin-top: .01%;
+  margin-left: 20%; 
+}
+
+.link-place{
+  margin-top: 8%;
+  margin-bottom: .1%;
 }
