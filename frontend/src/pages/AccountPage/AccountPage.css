@@ -24,3 +24,24 @@
       background: (url('/../frontend/Assets/animal-banner.jpeg'));
       size: 100%;
   }
+
+  .form-layout {
+      border: 2px inset #800080;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 98%;
+      overflow: auto;
+      text-align: center;
+      
+  }
+
+  .form-layout2 {
+      border: 2px double #800080;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:7px;
+  }
+
+ 

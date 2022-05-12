@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import { useEffect, useState } from "react";
+import "./AccountPage.css";
+import { Table } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 
 let initialValues = {
@@ -70,18 +73,23 @@ const AccountPage = () => {
   return (
     <div >
       <h1>Create a New Adoption form for {user.username} </h1>
-      <form  onSubmit={handleSubmit}>
-        <label>
-          User: {user.id}
+      
+      <form striped bordered hover className="form-layout" onSubmit={handleSubmit}>
+    <div className="form-layout2">
+        <label className="form-layout2">
+        <center> User: {user.id} &nbsp;</center>
+         
           <input
+          placeholder="User"
             type="text"
             name="user"
             value={formData.user.id}
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          First Name:{" "}
+        <label className="form-layout2">
+         <center> First Name:&nbsp;</center>
+        
           <input
             type="text"
             name="first_name"
@@ -89,8 +97,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Last Name:{" "}
+        <label className="form-layout2">
+        <center> Last Name:&nbsp;</center>
           <input
             type="text"
             name="last_name"
@@ -98,8 +106,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Street:{" "}
+        <label className="form-layout2">
+        <center> Street:&nbsp;</center>
           <input
             type="text"
             name="street"
@@ -107,8 +115,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          City:{" "}
+        <label className="form-layout2">
+        <center> City:&nbsp;</center>
           <input
             type="text"
             name="city"
@@ -116,8 +124,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          State:{" "}
+        <label className="form-layout2">
+        <center> State:&nbsp;</center>
           <input
             type="text"
             name="state"
@@ -125,8 +133,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Zipcode:{" "}
+        <label className="form-layout2">
+        <center>Zipcode:&nbsp;</center>
           <input
             type="text"
             name="zipcode"
@@ -134,8 +142,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Phone:{" "}
+        <label className="form-layout2">
+        <center>Phone:&nbsp;</center>
           <input
             type="text"
             name="phone"
@@ -143,8 +151,10 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Pets:{" "}
+        </div>
+        <div className="form-layout2">
+        <label className="form-layout2">
+        <center>Pets:&nbsp;</center>
           <input
             type="text"
             name="pets"
@@ -152,8 +162,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Pet's Age:{" "}
+        <label className="form-layout2">
+        <center>Pet's Age:&nbsp;</center>
           <input
             type="text"
             name="pets_age"
@@ -161,8 +171,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Pet's Species:{" "}
+        <label className="form-layout2">
+        <center>Pet's Species:&nbsp;</center>
           <input
             type="text"
             name="pets_species"
@@ -170,8 +180,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Pet's Breed:{" "}
+        <label className="form-layout2">
+        <center>Pet's Breed:&nbsp;</center>
           <input
             type="text"
             name="pets_breed"
@@ -179,8 +189,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Pet's Gender:{" "}
+        <label className="form-layout2">
+        <center>Pet's Gender:&nbsp;</center>
           <input
             type="text"
             name="pets_sex"
@@ -188,8 +198,8 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Adoption Date:{" "}
+        <label className="form-layout2">
+        <center>Adoption Date:&nbsp;</center>
           <input
           placeholder="YYYY-MM-DD"
             type="text"
@@ -198,17 +208,89 @@ const AccountPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <button>Submit</button>
+        <Button  variant="light" style={{background:"#800080", margin: ".5%", outline: "none", color: "whitesmoke"}} type="submit">Submit</Button>
+        </div>
       </form>
-      {adopters &&
-        adopters
-        .map((adopter, index) => (
-          <div key={index}>
-          <h3> User ID: {adopter.user} | Name: {adopter.first_name} {adopter.last_name}{" "}</h3>
-          <h6> Address: {adopter.street} {adopter.city} {adopter.state} {adopter.zipcode} Phone: {adopter.phone} </h6> 
-          <h6> Pet Info: {adopter.pets} {adopter.pets_age} {adopter.pets_species} {adopter.pets_breed} {adopter.pets_sex} {adopter.adoption_date} </h6>
+
+      <div className="container2">
+<Table striped bordered hover className="table-specs" >
+        <thead className="font-account">
+
+          <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Currrent Pets</th>
+            <th scope="col">Pet's Age</th>
+            <th scope="col">Species</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Adoption Date</th>
+          </tr>
+
+        </thead>
+
+        <tbody className="font-account"> 
+        
+        {adopters &&
+          adopters.map((adopter) => (
+            
+        
+              <tr>
+
+             <td>
+               {adopter.user} {" "}
+              </td>
+
+                <td>
+              {adopter.first_name}{" "}{adopter.last_name}
+                </td>
+
+             <td>
+               {adopter.street}{", "} {adopter.city}{", "}{adopter.state}{", "}
+                {adopter.zipcode}
+                </td> 
+
+                <td>
+               {adopter.phone}
+                 </td>
+
+                <td>
+                 {adopter.pets} 
+                </td>
+                
+                <td>
+                  {adopter.pets_age}
+                </td>
+
+                <td>
+                {adopter.pets_species} 
+                </td>
+
+                <td>
+                  {adopter.pets_breed} 
+                </td>
+
+                <td>
+                  {adopter.pets_sex}
+                </td>
+
+                <td>
+                {adopter.adoption_date}
+                </td>
+
+          </tr>
+      
+
+          ))}
+
+          </tbody>
+          </Table>
           </div>
-        ))}
+          <img src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/src/srcAssets/animal-banner.jpeg')}
+          width="100%"
+          alt="animals" />
     </div>
   );
 };
