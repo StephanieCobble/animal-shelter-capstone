@@ -16,7 +16,7 @@ const DeleteLost = (props) => {
     
       return (
         <form onSubmit={handleSubmit}>
-          <Button variant="primary"  type="submit">Delete</Button>
+          <Button variant="light" style={{background:"#800080", margin: ".5%", outline: "none", color: "whitesmoke"}}  type="submit">Delete</Button>
         </form>
       );
     };

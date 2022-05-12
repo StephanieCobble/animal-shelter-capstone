@@ -54,7 +54,7 @@ const EditLost = (props) => {
   }
     return(
       <div>
-        <Button className="modal-button" variant="primary" onClick={handleShow}>Edit</Button>
+        <Button className="modal-button" variant="light" style={{background:"#800080", margin: ".5%", outline: "none", color: "whitesmoke"}} onClick={handleShow}>Edit</Button>
         <Modal
         show={show}
         onHide={handleClose}
@@ -110,8 +110,8 @@ const EditLost = (props) => {
                 
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick={handleCloseSave}> Update Pet </Button>
-            <Button variant="secondary" onClick={handleClose}>Close</Button>
+            <Button variant="light" style={{background:"#800080", margin: "1%", outline: "none", color: "whitesmoke", padding: "1%"}} onClick={handleCloseSave}> Update Pet </Button>
+            <Button variant="light" style={{background:"#8e5994", margin: ".5%", outline: "none", color: "whitesmoke"}} onClick={handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
       </div>

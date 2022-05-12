@@ -1,6 +1,6 @@
-/* .dropdown{
-    position: relative;
-} */
+.buttons {
+  color: rgb(128,0,128)
+}
 
 .dropdown {
     position: relative;

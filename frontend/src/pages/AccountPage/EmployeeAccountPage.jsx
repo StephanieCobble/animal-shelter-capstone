@@ -1,12 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import AddNewAdoptable from "../AdoptPage/AddNewAdoptable";
-
-
+import Button from "react-bootstrap/Button";
+import "./AccountPage.css";
+import { Table } from "react-bootstrap";
 
 
 const EmployeeAccountPage = () => {
@@ -29,35 +30,115 @@ const EmployeeAccountPage = () => {
     fetchAdopters();
   }, [token]);
 
+  return (
+    <div>
+      <h1>Employee Account Page</h1>
+      <>
+      <Button
+        className="account-buttons"
+        variant="light"
+        style={{ background: "#800080", margin: ".5%", color: "whitesmoke" }}
+        href="/empaddpet"
+      >
+        Add Adoptable Pet
+      </Button>
+  
+      <Button
+        className="account-buttons"
+        variant="light"
+        style={{
+          background: "#800080",
+          margin: ".5%",
+          color: "whitesmoke",
+          padding: "px",
+        }}
+        href="/empaddlost"
+      >
+        Add Lost Pet
+      </Button>
+      </>
+        <div className="container2">
+      <Table striped bordered hover className="table-specs" >
+        <thead className="font-account">
 
-    return ( 
-        <div>
-            <h1>Employee Account Page</h1>
-            <div> add links to add/delete/update pets (adoptable + lost)</div>
-        <Link to="/empaddpet">
-            Add New Adoptable Pet
-        </Link>
-        <br/>
-        <Link to="/empaddlost">
-            Add New Lost Pet
-        </Link>
-            <div>
-            {adopters &&
-        adopters
-        .map((adopter, index) => (
-          <div key={index}>
-          <h3> User ID: {adopter.user} | Name: {adopter.first_name} {adopter.last_name}{" "}</h3>
-          <h6> Address: {adopter.street} {adopter.city} {adopter.state} {adopter.zipcode} Phone: {adopter.phone} </h6> 
-          <h6> Pet Info: {adopter.pets} {adopter.pets_age} {adopter.pets_species} {adopter.pets_breed} {adopter.pets_sex} {adopter.adoption_date} </h6>
-          </div>
-        ))}
+          <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Currrent Pets</th>
+            <th scope="col">Pet's Age</th>
+            <th scope="col">Species</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Adoption Date</th>
+          </tr>
+
+        </thead>
+
+        <tbody className="font-account"> 
         
-        </div>
+        {adopters &&
+          adopters.map((adopter) => (
+            
+        
+              <tr>
 
+             <td>
+               {adopter.user} {" "}
+              </td>
 
-        </div>
+                <td>
+              {adopter.first_name}{" "}{adopter.last_name}
+                </td>
 
-     );
-}
- 
+             <td>
+               {adopter.street}{", "} {adopter.city}{", "}{adopter.state}{", "}
+                {adopter.zipcode}
+                </td> 
+
+                <td>
+               {adopter.phone}
+                 </td>
+
+                <td>
+                 {adopter.pets} 
+                </td>
+                
+                <td>
+                  {adopter.pets_age}
+                </td>
+
+                <td>
+                {adopter.pets_species} 
+                </td>
+
+                <td>
+                  {adopter.pets_breed} 
+                </td>
+
+                <td>
+                  {adopter.pets_sex}
+                </td>
+
+                <td>
+                {adopter.adoption_date}
+                </td>
+
+          </tr>
+      
+
+          ))}
+
+          </tbody>
+          </Table>
+          <div className="banner-img"> </div>
+          </div>
+          <img src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/src/srcAssets/animal-banner.jpeg')}
+          width="100%"
+          alt="animals" />
+    </div>
+  );
+};
+
 export default EmployeeAccountPage;

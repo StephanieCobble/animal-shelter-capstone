@@ -1,0 +1,26 @@
+/* .account-buttons {
+    padding: 1%;
+    padding-bottom: 4%;
+    padding-right: 10%;
+} */
+
+.font-account {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: small;
+    /* z-index: 3; */
+  }
+
+
+
+  .container2 {
+    margin: 0 auto;
+    max-width: 85%;
+    overflow: auto;
+    text-align: center;
+  }
+
+  .banner-img {
+      background: (url('/../frontend/Assets/animal-banner.jpeg'));
+      size: 100%;
+  }
