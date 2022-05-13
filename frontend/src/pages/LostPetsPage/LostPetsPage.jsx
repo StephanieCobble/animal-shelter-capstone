@@ -6,9 +6,10 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import EditLost from "./EditLost";
 import DeleteLost from "./DeleteLost";
-// import DropdownButton from 'react-bootstrap/DropdownButton'
-// import { Dropdown } from "bootstrap";
-// import Select from "react-select";
+import "../AccountPage/AccountPage.css";
+import Button from "react-bootstrap/Button";
+import { Table } from "react-bootstrap";
+
 
 
 
@@ -28,27 +29,81 @@ const LostPetsPage = () => {
   }, []);
 
   return (
+
     <>
+    <div className="account-buttons">
+      <Button
+        
+        variant="light"
+        style={{ background: "#800080", margin: ".5%", color: "whitesmoke" }}
+        href="/adoptsearch"
+      >
+        Search Lost Pets
+      </Button>
+      </div>
+
       <h1 className="container">Lost Pets</h1>
 
-      <Link to="/lostsearch" style={{textDecoraction: "none"}}>
-          <p className="font2">Search Lost Pets</p>
-      </Link>
 
-      <div>
+      <div className="container2">
+      <Table striped bordered hover className="table-specs" >
+        <thead className="font-account">
+
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Species</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date Found</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+
+        <tbody className="font-account"> 
+
         {pets &&
-          pets
-            .map((pet, index) => (
-              <div key={index}>
-                <h3> Name: {pet.name} </h3> <h4> Species: {pet.species} </h4>{" "}
-                <h4>Breed: {pet.breed} </h4> <h4>Male/Female: {pet.sex} </h4>{" "}
-                <h4>Age: {pet.age} </h4>  <img width="10%" height="10%" src= {pet.image} alt=""></img>{" "}
-                <h6> {pet.description}</h6> 
-                <h6> {pet.date_found}</h6> 
-                <EditLost pet={pet}/>
-                <DeleteLost pet={pet} />
-              </div>
-            ))}
+          pets.map((pet) => (
+
+            <tr>
+
+            <td>
+            {pet.name}
+            </td>
+            <td>
+            {pet.species}
+            </td>
+            <td>
+            {pet.breed}
+            </td>
+            <td>
+            {pet.sex}
+            </td>
+            <td>
+            {pet.age}
+            </td>
+            <td>
+            <img width="10%" height="10%" src={pet.image} alt=""></img>
+            </td>
+            <td>
+            {pet.description}
+            </td>
+            <td>
+            {pet.date_found}
+            </td>
+            <td>
+            <EditLost pet={pet} />
+            </td>
+            <td>
+            <DeleteLost pet={pet} />
+            </td>
+          </tr>
+          ))}
+             </tbody>
+          </Table>
       </div>
     </>
   );

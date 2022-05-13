@@ -1,8 +1,6 @@
-/* .account-buttons {
-    padding: 1%;
-    padding-bottom: 4%;
-    padding-right: 10%;
-} */
+.account-buttons {
+   margin-left: 85%;
+}
 
 .font-account {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

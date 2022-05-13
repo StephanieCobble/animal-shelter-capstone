@@ -10,7 +10,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./AdoptPage.css";
 import EditAdoptable from "./EditAdoptable";
 import DeleteAdoptable from "./DeleteAdoptable";
-
+import "../AccountPage/AccountPage.css";
+import Button from "react-bootstrap/Button";
+import { Table } from "react-bootstrap";
 
 const AdoptPage = () => {
   const [pets, setPets] = useState([]);
@@ -30,25 +32,75 @@ const AdoptPage = () => {
 
   return (
     <>
+    <div className="account-buttons">
+      <Button
+        
+        variant="light"
+        style={{ background: "#800080", margin: ".5%", color: "whitesmoke" }}
+        href="/adoptsearch"
+      >
+        Search Adoptable Pets
+      </Button>
+      </div>
+
       <h1 className="container">Adoptable Pets</h1>
 
-      <Link to="/adoptsearch" style={{textDecoraction: "none"}}>
-          <p className="font2">Search Adoptable Pets</p>
-      </Link>
 
+      <div className="container2">
+      <Table striped bordered hover className="table-specs" >
+        <thead className="font-account">
 
-      <div>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Species</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Description</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+
+        <tbody className="font-account"> 
+
         {pets &&
-          pets
-            .map((pet, index) => (
-              <div key={index}>
-                <h3> Name: {pet.name} </h3> <h4> Species: {pet.species} </h4>{" "}
-                <h4>Breed: {pet.breed} </h4> <h4>Male/Female: {pet.sex} </h4>{" "}
-                <h4>Age: {pet.age} </h4>  <img width="10%" height="10%" src= {pet.image} alt=""></img> {" "}
-                <h6> {pet.description}</h6>
-               <><EditAdoptable pet={pet} /><DeleteAdoptable pet={pet} /> </> 
-              </div>
-            ))}
+          pets.map((pet) => (
+
+            <tr>
+
+            <td>
+            {pet.name}
+            </td>
+            <td>
+            {pet.species}
+            </td>
+            <td>
+            {pet.breed}
+            </td>
+            <td>
+            {pet.sex}
+            </td>
+            <td>
+            {pet.age}
+            </td>
+            <td>
+            <img width="10%" height="10%" src={pet.image} alt=""></img>
+            </td>
+            <td>
+            {pet.description}
+            </td>
+            <td>
+            <EditAdoptable pet={pet} />
+            </td>
+            <td>
+            <DeleteAdoptable pet={pet} />
+            </td>
+            </tr>
+          ))}
+             </tbody>
+          </Table>
       </div>
     </>
   );
