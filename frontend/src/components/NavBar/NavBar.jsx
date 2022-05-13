@@ -25,18 +25,30 @@ const Navbar = () => {
           </Link>
           </div>
         </li>
-        <Link className="link-place" to="/" style={{ textDecoration: "none", color: "white" }}>
+  
+
+ 
+
+        <div className="link-place">
+        <Link  to="/" style={{ textDecoration: "none", color: "white" }}>
           <p >Home</p>
         </Link>
-        <Link  className="link-place" to="/adopt" style={{ textDecoration: "none", color: "white" }}>
+        </div>
+        <div className="link-place">
+        <Link  to="/adopt" style={{ textDecoration: "none", color: "white" }}>
           <p >Adopt</p>
         </Link>
-        <Link  className="link-place" to="/lost" style={{ textDecoration: "none", color: "white" }}>
+        </div>
+        <div className="link-place">
+        <Link   to="/lost" style={{ textDecoration: "none", color: "white" }}>
           <p >Lost Pets</p>
         </Link>
-        <Link  className="link-place" to="/account" style={{ textDecoration: "none", color: "white" }}>
+        </div>
+        <div className="link-place">
+        <Link   to="/account" style={{ textDecoration: "none", color: "white" }}>
           <p >Account</p>
         </Link>
+        </div>
         <li  className="link-place">
           {user ? (
             <button onClick={logoutUser}>Logout</button>

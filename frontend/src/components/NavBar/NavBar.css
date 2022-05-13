@@ -8,14 +8,19 @@ li {
   font-size: 1.25rem;
 }
 
+.top-border{
+  border-top: 2px solid #000000;
+}
+
 .navBar {
   background: rgb(192, 159, 245);
   box-shadow: 4px 2px 5px gray;
-  color: white;
-  margin-bottom: 1rem;
+  color:  rgba(189, 155, 221, 0.291);
+  /* margin-bottom: 1rem; */
   /* padding: 1rem 1rem; */
   padding-right: 1rem;
   background-image: url("/../frontend/Assets/navBar/navbar.png");
+  /* border-bottom: 2px solid #000000; */
   background-size: 51% 78%;
   background-repeat:no-repeat;
   background-position: 70% 1%;
@@ -78,6 +83,11 @@ li {
 }
 
 .link-place{
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 1%;
+  margin-right: 1%;
   margin-top: 8%;
   margin-bottom: .1%;
+  
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import "./HomePage.css"
 
 
 const HomePage = () => {
@@ -12,17 +13,25 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div >
-      <h1>Welcome to Haven...</h1>
-      <h1>...helping pets find their furrever homes</h1>
+    <div className="background">
+    <div className="home-container" >
+      <div className="h1">
+      <h1 >Welcome to Haven...</h1>
+      </div>
+      <div className="h2">
+      <h2 >...helping pets find their furrever homes</h2>
+      </div>
       <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 incididunt ut labore et dolore magna aliqua. Adipiscing elit pellentesque habitant 
 morbi tristique. Dignissim sodales ut eu sem integer vitae justo eget magna. 
 Sollicitudin ac orci phasellus egestas. Dui sapien eget mi proin. </h4>
+
     <div  >
-     <img  src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/public/andrew-s-ouo1hbizWwo-unsplash.jpg')} alt="" width="50%" height="50%" />
+     <img  src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/public/andrew-s-ouo1hbizWwo-unsplash.jpg')} alt="" height="50%" width="50%" />
    
-     <img src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/Assets/tran-mau-tri-tam-7QjU_u2vGDs-unsplash.jpg')} alt="" width="50%" height="50%" />
+     <img src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/Assets/tran-mau-tri-tam-7QjU_u2vGDs-unsplash.jpg')} alt="" height="50%" width="50%" />
+    </div>
+   
     </div>
     </div>
   );

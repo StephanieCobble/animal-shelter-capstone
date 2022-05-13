@@ -5,6 +5,9 @@ import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import { useEffect, useState } from "react";
 import ImageUpload from "./ImageUpload"
+import "../AccountPage/AccountPage.css"
+import Button from "react-bootstrap/Button";
+
 
 let initialValues = {
     name: "",
@@ -43,11 +46,13 @@ const AddNewAdoptable = () => {
       }
 
     return ( 
-        <div>
+        <div  className="background">
             <h1>Create New Adoptable Pet Listing</h1>
-            <form onSubmit={handleSubmit}>
-            <label>
-          Name:{" "}
+
+            <form className="form-layout" onSubmit={handleSubmit}>
+            <div className="form-layout2">
+            <label className="form-layout2">
+         <center> Name:&nbsp;</center>
           <input
             type="text"
             name="name"
@@ -55,8 +60,8 @@ const AddNewAdoptable = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Species:{" "}
+        <label className="form-layout2">
+          Species:&nbsp;
           <input
             type="text"
             name="species"
@@ -64,8 +69,8 @@ const AddNewAdoptable = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Breed:{" "}
+        <label className="form-layout2">
+          Breed:&nbsp;
           <input
             type="text"
             name="breed"
@@ -73,8 +78,8 @@ const AddNewAdoptable = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Gender:{" "}
+        <label className="form-layout2">
+          Gender:&nbsp;
           <input
             type="text"
             name="sex"
@@ -82,8 +87,8 @@ const AddNewAdoptable = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Age:{" "}
+        <label className="form-layout2">
+          Age:&nbsp;
           <input
             type="text"
             name="age"
@@ -91,8 +96,8 @@ const AddNewAdoptable = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Image:{" "}
+        <label className="form-layout2">
+          Image:&nbsp;
          <input 
           type='url' 
           name="image"
@@ -100,8 +105,10 @@ const AddNewAdoptable = () => {
           onChange={handleInputChange}
           />
         </label>
-        <label>
-          Description:{" "}
+      
+        <div>
+        <label className="form-layout2">
+          Description:&nbsp;
           <input
             type="text"
             name="description"
@@ -109,8 +116,11 @@ const AddNewAdoptable = () => {
             onChange={handleInputChange}
           />
         </label>
-        <button>Submit</button>
+        </div>
+        </div>
+        <Button  variant="light" style={{background:"#800080", margin: ".5%", outline: "none", color: "whitesmoke"}} type="submit">Submit</Button>
             </form>
+            <br/>
         </div>
      );
 }

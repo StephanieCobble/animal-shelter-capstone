@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import { useEffect, useState } from "react";
+import "../AccountPage/AccountPage.css"
+import Button from "react-bootstrap/Button";
 
 let initialValues = {
     name: "",
@@ -43,11 +45,13 @@ const AddNewLost = () => {
       }
 
     return ( 
-        <div>
+        <div className="background">
             <h1>Create New Lost Pet Listing</h1>
-            <form onSubmit={handleSubmit}>
-            <label>
-          Name:{" "}
+
+            <form className="form-layout" onSubmit={handleSubmit}>
+            <div className="form-layout2">
+            <label className="form-layout2">
+          Name:&nbsp;
           <input
             type="text"
             name="name"
@@ -55,8 +59,8 @@ const AddNewLost = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Species:{" "}
+        <label className="form-layout2">
+          Species:&nbsp;
           <input
             type="text"
             name="species"
@@ -64,8 +68,8 @@ const AddNewLost = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Breed:{" "}
+        <label className="form-layout2">
+          Breed:&nbsp;
           <input
             type="text"
             name="breed"
@@ -73,8 +77,8 @@ const AddNewLost = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Gender:{" "}
+        <label className="form-layout2">
+          Gender:&nbsp;
           <input
             type="text"
             name="sex"
@@ -82,8 +86,8 @@ const AddNewLost = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Age:{" "}
+        <label className="form-layout2">
+          Age:&nbsp;
           <input
             type="text"
             name="age"
@@ -91,8 +95,8 @@ const AddNewLost = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Image:{" "}
+        <label className="form-layout2">
+          Image:&nbsp;
           <input
             type="url"
             name="image"
@@ -100,7 +104,7 @@ const AddNewLost = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
+        <label className="form-layout2">
           Description:{" "}
           <input
             type="text"
@@ -109,8 +113,8 @@ const AddNewLost = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
-          Date Found:{" "}
+        <label className="form-layout2">
+          Date Found:&nbsp;
           <input
           placeholder="YYYY-MM-DD"
             type="text"
@@ -119,8 +123,10 @@ const AddNewLost = () => {
             onChange={handleInputChange}
           />
         </label>
-        <button>Submit</button>
+        </div>
+        <Button  variant="light" style={{background:"#800080", margin: ".5%", outline: "none", color: "whitesmoke"}} type="submit">Submit</Button>
             </form>
+            <br/>
         </div>
      );
 }

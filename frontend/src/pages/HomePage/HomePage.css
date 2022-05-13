@@ -6,3 +6,37 @@
     justify-content: space-evenly;
 } */
 
+.h1 {
+    margin-left: 2%;
+}
+.h2 {
+    margin-left: 10%;
+    padding-bottom: 1%;
+}
+
+h4 {
+    margin-left: 2%;
+    margin-right: 70%;
+    margin-top: 10%;
+}
+.background {
+    background-color: rgba(189, 155, 221, 0.291);
+}
+
+.home-container{
+    margin: 0 auto;
+    max-width: 95%;
+    overflow: auto;
+   
+    /* text-align: center; */
+
+}
+/* 
+.dc {
+    max-height: 10rem;
+    max-width: 10rem;
+}
+.dc2 {
+    max-height: 10rem;
+    max-width: 10rem;
+} */

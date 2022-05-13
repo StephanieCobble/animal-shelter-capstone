@@ -11,7 +11,9 @@
     /* z-index: 3; */
   }
 
-
+  .background {
+    background-color: rgba(189, 155, 221, 0.291);
+}
 
   .container2 {
     margin: 0 auto;

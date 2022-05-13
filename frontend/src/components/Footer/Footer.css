@@ -1,9 +1,20 @@
 footer {
   position:relative;
+  background-color:  rgba(189, 155, 221, 0.291);
   bottom: 0;
   font-size: 1.2rem;
   left: 0;
   padding: 1rem;
   text-align: center;
   width: 100%;
+  color: #000000;
+  font-weight: 700;
+  
+}
+
+.footer-image{
+  
+  background-image: url('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/Assets/meghan-hessler-Uc6_kr4_Baw-unsplash.jpg')
+  ;
+  opacity: 70%;
 }
