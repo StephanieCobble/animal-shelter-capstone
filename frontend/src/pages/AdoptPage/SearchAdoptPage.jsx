@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
 import { DropdownButton, Dropdown } from "react-bootstrap";
 import axios from "axios";
+import { Table } from "react-bootstrap";
 
 class SearchAdoptPage extends Component {
   constructor(props) {
@@ -100,9 +100,11 @@ class SearchAdoptPage extends Component {
 
   render() {
     return (
+      <div className="home-container">
+        <h1 className="container">Search Adoptable Pets</h1>
       <div className="input-group">
         <div className="input-group-append">
-          <label >Search </label>
+          <label >Search &nbsp; </label>
         </div>
         <input
           onChange={(e) => this.setState({ query: e.target.value })}
@@ -111,39 +113,91 @@ class SearchAdoptPage extends Component {
           id="query"
           type="text"
         />
-        <DropdownButton id="dropdown-basic-button" title="Search By">
+         &nbsp;
+         &nbsp;
+        <DropdownButton  id="dropdown-basic-button" title="Search By">
           <Dropdown.Item onClick={this.filterBySpecies}>Species</Dropdown.Item>
           <Dropdown.Item onClick={this.filterByBreed}>Breed</Dropdown.Item>
           <Dropdown.Item onClick={this.filterByAge}>Age</Dropdown.Item>
           <Dropdown.Item onClick={this.filterBySex}>Sex</Dropdown.Item>
         </DropdownButton>
         <br />
-        <table>
-          <thead>
+        
+        <div className="container2">
+      <Table striped bordered hover className="table-specs" >
+        <thead className="font-account">
+
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Species</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+
+        <tbody className="font-account"> 
+
+        {this.state.results.map((pet) => (
+
             <tr>
-              <th>Name</th>
-              <th>Species</th>
-              <th>Breed</th>
-              <th>Sex</th>
-              <th>Age</th>
-              <th>Image</th>
-              <th>Description</th>
+
+            <td>
+            {pet.name}
+            </td>
+            <td>
+            {pet.species}
+            </td>
+            <td>
+            {pet.breed}
+            </td>
+            <td>
+            {pet.sex}
+            </td>
+            <td>
+            {pet.age}
+            </td>
+            <td>
+            <img width="10%" height="10%" src={pet.image} alt=""></img>
+            </td>
+            <td>
+            {pet.description}
+            </td>
+    
             </tr>
-          </thead>
-          <tbody>
-            {this.state.results.map((pet, index) => (
-              <tr key={index}>
-                <td>{pet.name}</td>
-                <td>{pet.species}</td>
-                <td>{pet.breed}</td>
-                <td>{pet.sex}</td>
-                <td>{pet.age}</td>
-                <td>{pet.image}</td>
-                <td>{pet.description}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+          ))}
+             </tbody>
+          </Table>
+      </div>
+
+
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       </div>
     );
   }

@@ -7,7 +7,6 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import AdoptionFormPage from "./pages/AdoptionFormPage/AdoptionFormPage";
 import AdoptPage from "./pages/AdoptPage/AdoptPage";
 import LostPetsPage from "./pages/LostPetsPage/LostPetsPage";
 import SearchAdoptPage from "./pages/AdoptPage/SearchAdoptPage";
@@ -16,7 +15,7 @@ import AccountPage from "./pages/AccountPage/AccountPage";
 import EmployeeAccountPage from "./pages/AccountPage/EmployeeAccountPage";
 import AddNewAdoptable from "./pages/AdoptPage/AddNewAdoptable";
 import AddNewLost from "./pages/LostPetsPage/AddNewLost";
-import EditAdoptable from "./pages/AdoptPage/EditAdoptable";
+
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -83,6 +82,7 @@ function App() {
         /> */}
         {/* <Route path="/form" element={<PrivateRoute><AdoptionFormPage /></PrivateRoute>} /> */}
       </Routes>
+    
       <Footer />
     </div>
   );

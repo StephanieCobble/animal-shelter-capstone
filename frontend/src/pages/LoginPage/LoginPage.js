@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
-import { Link } from "react-router-dom";
 import "./LoginPage.css";
 import Button from "react-bootstrap/Button";
 
@@ -40,23 +39,52 @@ const LoginPage = () => {
             onChange={handleInputChange}
           />
         </label>
+
+        
         {isServerError ? (
           <p className="error">Login failed, incorrect credentials!</p>
         ) : null}
+
+        <button 
+        className="border"
+          variant="light"
+          style={{ background: "#800080",  color: "whitesmoke" }}
+          
+        >
+          Login!
+        </button>
         <Button
           variant="light"
+          size="sm"
           style={{ background: "#800080", margin: ".5%", color: "whitesmoke" }}
           href="/register"
         >
           Click to register!
         </Button>
-        <Button
-          variant="light"
-          style={{ background: "#800080", margin: ".5%", color: "whitesmoke" }}
-        >
-          Login!
-        </Button>
       </form>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
   );
 };

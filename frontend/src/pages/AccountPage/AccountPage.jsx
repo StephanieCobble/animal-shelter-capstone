@@ -1,5 +1,4 @@
 import axios from "axios";
-import reactDom from "react-dom";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
@@ -72,8 +71,8 @@ const AccountPage = () => {
   }
 
   return (
-    <div>
-      <h1>Create a New Adoption form for {user.username} </h1>
+    <div className="home-container">
+      <h1> Create a New Adoption form for {user.username} </h1>
 
       <form
         striped
@@ -105,7 +104,7 @@ const AccountPage = () => {
             />
           </label>
           <label className="form-layout2">
-            <center> Last Name:&nbsp;</center>
+             Last Name:&nbsp;
             <input
               type="text"
               name="last_name"
@@ -215,7 +214,8 @@ const AccountPage = () => {
               onChange={handleInputChange}
             />
           </label>
-          <Button
+
+           <Button
             variant="light"
             style={{
               background: "#800080",
@@ -226,7 +226,7 @@ const AccountPage = () => {
             type="submit"
           >
             Submit
-          </Button>
+          </Button> 
         </div>
       </form>
 

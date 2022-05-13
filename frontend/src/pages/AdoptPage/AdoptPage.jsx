@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import DropdownButton from 'react-bootstrap/DropdownButton'
-// import { Dropdown } from "bootstrap";
-// import Select from "react-select";
 import "./AdoptPage.css";
 import EditAdoptable from "./EditAdoptable";
 import DeleteAdoptable from "./DeleteAdoptable";

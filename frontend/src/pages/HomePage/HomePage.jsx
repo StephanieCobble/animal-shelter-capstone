@@ -1,8 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
-import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css"
 
 
@@ -26,13 +23,14 @@ incididunt ut labore et dolore magna aliqua. Adipiscing elit pellentesque habita
 morbi tristique. Dignissim sodales ut eu sem integer vitae justo eget magna. 
 Sollicitudin ac orci phasellus egestas. Dui sapien eget mi proin. </h4>
 
-    <div  >
-     <img  src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/public/andrew-s-ouo1hbizWwo-unsplash.jpg')} alt="" height="50%" width="50%" />
+    <div className="home-pics" >
+     <img  src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/public/andrew-s-ouo1hbizWwo-unsplash.jpg')} alt="" height="45%" width="45%" />
    
-     <img src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/Assets/tran-mau-tri-tam-7QjU_u2vGDs-unsplash.jpg')} alt="" height="50%" width="50%" />
+     <img src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/Assets/tran-mau-tri-tam-7QjU_u2vGDs-unsplash.jpg')} alt="" height="45%" width="45%" />
     </div>
    
     </div>
+    <br/>
     </div>
   );
 };

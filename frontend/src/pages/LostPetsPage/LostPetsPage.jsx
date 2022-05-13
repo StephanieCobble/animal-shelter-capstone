@@ -1,7 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
-import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import EditLost from "./EditLost";
@@ -9,9 +7,6 @@ import DeleteLost from "./DeleteLost";
 import "../AccountPage/AccountPage.css";
 import Button from "react-bootstrap/Button";
 import { Table } from "react-bootstrap";
-
-
-
 
 const LostPetsPage = () => {
   const [pets, setPets] = useState([]);
@@ -36,7 +31,7 @@ const LostPetsPage = () => {
         
         variant="light"
         style={{ background: "#800080", margin: ".5%", color: "whitesmoke" }}
-        href="/adoptsearch"
+        href="/lostsearch"
       >
         Search Lost Pets
       </Button>
@@ -104,6 +99,23 @@ const LostPetsPage = () => {
           ))}
              </tbody>
           </Table>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
       </div>
     </>
   );

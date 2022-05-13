@@ -10,3 +10,10 @@
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 15px;
 }
+
+.button {
+  border-color: #800080;
+  border-radius: 5px;
+ 
+  
+}

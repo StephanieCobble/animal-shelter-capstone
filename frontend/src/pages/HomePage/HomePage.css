@@ -23,9 +23,17 @@ h4 {
     background-color: rgba(189, 155, 221, 0.291);
 }
 
+.home-pics {
+    
+        margin: 0 auto;
+        max-width: 100%;
+        overflow: auto;
+        text-align: center;
+}
+
 .home-container{
     margin: 0 auto;
-    max-width: 95%;
+    max-width: 97%;
     overflow: auto;
    
     /* text-align: center; */

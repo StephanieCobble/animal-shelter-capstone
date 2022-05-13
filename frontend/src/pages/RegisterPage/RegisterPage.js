@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
 import Button from "react-bootstrap/Button";
 
 const RegisterPage = () => {
@@ -94,6 +93,16 @@ const RegisterPage = () => {
           Register!
         </Button>
       </form>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
   );
 };

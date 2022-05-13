@@ -1,10 +1,7 @@
 import axios from "axios";
-import reactDom from "react-dom";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
-import { useEffect, useState } from "react";
-import ImageUpload from "./ImageUpload"
 import "../AccountPage/AccountPage.css"
 import Button from "react-bootstrap/Button";
 
@@ -46,6 +43,7 @@ const AddNewAdoptable = () => {
       }
 
     return ( 
+      <div className="home-container">
         <div  className="background">
             <h1>Create New Adoptable Pet Listing</h1>
 
@@ -121,6 +119,33 @@ const AddNewAdoptable = () => {
         <Button  variant="light" style={{background:"#800080", margin: ".5%", outline: "none", color: "whitesmoke"}} type="submit">Submit</Button>
             </form>
             <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            </div>
         </div>
      );
 }

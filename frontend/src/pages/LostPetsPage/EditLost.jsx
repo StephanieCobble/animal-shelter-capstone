@@ -1,8 +1,5 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import useAuth from "../../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
-import useCustomForm from "../../hooks/useCustomForm";
 import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
 import "../AccountPage/AccountPage.css";

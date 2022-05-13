@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import AddNewAdoptable from "../AdoptPage/AddNewAdoptable";
 import Button from "react-bootstrap/Button";
 import "./AccountPage.css";
 import { Table } from "react-bootstrap";
@@ -31,7 +29,7 @@ const EmployeeAccountPage = () => {
   }, [token]);
 
   return (
-    <div>
+    <div className="home-container">
       <h1>Employee Account Page</h1>
       <>
       <Button
