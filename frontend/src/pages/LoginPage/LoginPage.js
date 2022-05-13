@@ -3,6 +3,7 @@ import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
 import { Link } from "react-router-dom";
 import "./LoginPage.css";
+import Button from "react-bootstrap/Button";
 
 const LoginPage = () => {
   const { loginUser, isServerError } = useContext(AuthContext);
@@ -21,7 +22,7 @@ const LoginPage = () => {
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
-        <label>
+        <label className="font3">
           Username:{" "}
           <input
             type="text"
@@ -30,7 +31,7 @@ const LoginPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
+        <label className="font3">
           Password:{" "}
           <input
             type="text"
@@ -42,8 +43,19 @@ const LoginPage = () => {
         {isServerError ? (
           <p className="error">Login failed, incorrect credentials!</p>
         ) : null}
-        <Link to="/register">Click to register!</Link>
-        <button>Login!</button>
+        <Button
+          variant="light"
+          style={{ background: "#800080", margin: ".5%", color: "whitesmoke" }}
+          href="/register"
+        >
+          Click to register!
+        </Button>
+        <Button
+          variant="light"
+          style={{ background: "#800080", margin: ".5%", color: "whitesmoke" }}
+        >
+          Login!
+        </Button>
       </form>
     </div>
   );

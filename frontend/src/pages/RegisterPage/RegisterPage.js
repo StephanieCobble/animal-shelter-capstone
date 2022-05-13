@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import Button from "react-bootstrap/Button";
 
 const RegisterPage = () => {
   const { registerUser } = useContext(AuthContext);
@@ -22,7 +23,7 @@ const RegisterPage = () => {
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
-        <label>
+        <label className="font3">
           Username:{" "}
           <input
             type="text"
@@ -31,7 +32,7 @@ const RegisterPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
+        <label className="font3">
           First Name:{" "}
           <input
             type="text"
@@ -40,7 +41,7 @@ const RegisterPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
+        <label className="font3">
           Last Name:{" "}
           <input
             type="text"
@@ -49,7 +50,7 @@ const RegisterPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
+        <label className="font3">
           Email:{" "}
           <input
             type="text"
@@ -58,7 +59,7 @@ const RegisterPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <label>
+        <label className="font3">
           Password:{" "}
           <input
             type="text"
@@ -69,33 +70,29 @@ const RegisterPage = () => {
         </label>
 
         <div className="form-check form-switch">
-          <input 
-          className="form-check-input" 
-          type="checkbox" 
-          id="flexSwitchCheckDefault" 
-          name="isEmployee"
-          value={formData.isEmployee}
-          onChange={handleInputChange}
-          // onClick= {Boolean(true)}
-          />
-          <label className="form-check-label" >Are you an employee?</label>
-        </div>
-
-        {/* <label>
-          Are you an employee?{" "}
+          <label className="font4">Are you an employee?</label>
           <input
-            type="text"
-            name="is_employee"
-            value={formData.is_employee}
+            className="form-check-input"
+            type="checkbox"
+            id="flexSwitchCheckDefault"
+            name="isEmployee"
+            value={formData.isEmployee}
             onChange={handleInputChange}
+           
           />
-        </label> */}
+        </div>
 
         <p style={{ fontSize: "12px" }}>
           NOTE: Make this an uncommon password with characters, numbers, and
           special characters!
         </p>
-        <button type="submit">Register!</button>
+        <Button
+          variant="light"
+          style={{ background: "#800080", margin: ".5%", color: "whitesmoke" }}
+          type="submit"
+        >
+          Register!
+        </Button>
       </form>
     </div>
   );
