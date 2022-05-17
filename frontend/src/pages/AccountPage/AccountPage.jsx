@@ -295,8 +295,14 @@ const AccountPage = () => {
           </tbody>
         </Table>
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <img
-        src={require("file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/src/srcAssets/banner2.png")}
+      className="container3"
+        src={require("file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/src/srcAssets/banner3.png")}
         height="20%"
         width="100%"
         alt="animals"

@@ -132,7 +132,10 @@ const EmployeeAccountPage = () => {
           </Table>
           
           </div>
-          <img src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/src/srcAssets/animal-banner.jpeg')}
+          <br/>
+          <br/>
+          <br/>
+          <img src= {require('file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/src/srcAssets/banner3.png')}
           width="100%"
           alt="animals" />
     </div>
