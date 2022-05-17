@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import "./AccountPage.css";
 import { Table } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import DeleteAdopter from "./DeleteAdopter";
+
 
 let initialValues = {
   user: "",
@@ -290,6 +292,9 @@ const AccountPage = () => {
                   <td>{adopter.pets_sex}</td>
 
                   <td>{adopter.adoption_date}</td>
+                  <td>
+                    <DeleteAdopter adopter={adopter}/>
+                  </td>
                 </tr>
               ))}
           </tbody>
