@@ -29,7 +29,8 @@ const AccountPage = () => {
   const navigate = useNavigate();
   const [formData, handleInputChange, handleSubmit] = useCustomForm(
     initialValues,
-    postNewAdopter
+    postNewAdopter,
+    user.id
   );
 
   const [adopters, setAdopters] = useState([]);
@@ -83,15 +84,26 @@ const AccountPage = () => {
       >
         <div className="form-layout2">
           <label className="form-layout2">
-            <center> User: {user.id} &nbsp;</center>
+            <center> User: &nbsp;&nbsp;</center>
+            <select
+              name="user"
+              required="user"
+              value={formData.user.id}
+              onChange={handleInputChange}
+            >
+              <option value selected>
+                ------
+              </option>
+              <option value={user.id}>{user.username}</option>
+            </select>
 
-            <input
-              placeholder="User"
+            {/* <input
+              // placeholder="User"
               type="text"
               name="user"
               value={formData.user.id}
               onChange={handleInputChange}
-            />
+            /> */}
           </label>
           <label className="form-layout2">
             <center> First Name:&nbsp;</center>
@@ -104,7 +116,7 @@ const AccountPage = () => {
             />
           </label>
           <label className="form-layout2">
-             Last Name:&nbsp;
+            Last Name:&nbsp;
             <input
               type="text"
               name="last_name"
@@ -215,7 +227,7 @@ const AccountPage = () => {
             />
           </label>
 
-           <Button
+          <Button
             variant="light"
             style={{
               background: "#800080",
@@ -226,15 +238,16 @@ const AccountPage = () => {
             type="submit"
           >
             Submit
-          </Button> 
+          </Button>
         </div>
       </form>
+
+      <br />
 
       <div className="container2">
         <Table striped bordered hover className="table-specs">
           <thead className="font-account">
             <tr>
-              <th scope="col">User ID</th>
               <th scope="col">Name</th>
               <th scope="col">Address</th>
               <th scope="col">Phone</th>
@@ -251,18 +264,16 @@ const AccountPage = () => {
             {adopters &&
               adopters.map((adopter) => (
                 <tr>
-                  <td>{adopter.user} </td>
-
                   <td>
                     {adopter.first_name} {adopter.last_name}
                   </td>
 
                   <td>
                     {adopter.street}
-                    {", "} {adopter.city}
-                    {", "}
+                    {", "} &nbsp;{adopter.city}
+                    {", "}&nbsp;
                     {adopter.state}
-                    {", "}
+                    {", "}&nbsp;
                     {adopter.zipcode}
                   </td>
 
@@ -285,10 +296,12 @@ const AccountPage = () => {
         </Table>
       </div>
       <img
-        src={require("file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/src/srcAssets/animal-banner.jpeg")}
+        src={require("file:///Users/stephaniecobble/Desktop/devCodeCamp/Capstone/Code/animal-shelter-capstone/frontend/src/srcAssets/banner2.png")}
+        height="20%"
         width="100%"
         alt="animals"
       />
+ 
     </div>
   );
 };
