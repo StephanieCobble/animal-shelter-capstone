@@ -53,8 +53,8 @@ const LostPetsPage = () => {
             <th scope="col">Picture</th>
             <th scope="col">Description</th>
             <th scope="col">Date Found</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+            {/* <th scope="col">Edit</th>
+            <th scope="col">Delete</th> */}
           </tr>
         </thead>
 
@@ -89,12 +89,12 @@ const LostPetsPage = () => {
             <td>
             {pet.date_found}
             </td>
-            <td>
+            {/* <td>
             <EditLost pet={pet} />
             </td>
             <td>
             <DeleteLost pet={pet} />
-            </td>
+            </td> */}
           </tr>
           ))}
              </tbody>

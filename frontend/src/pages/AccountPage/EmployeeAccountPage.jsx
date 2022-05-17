@@ -54,6 +54,32 @@ const EmployeeAccountPage = () => {
       >
         Add Lost Pet
       </Button>
+      <Button
+        className="account-buttons"
+        variant="light"
+        style={{
+          background: "#800080",
+          margin: ".5%",
+          color: "whitesmoke",
+          padding: "px",
+        }}
+        href="/empadopt"
+      >
+        Edit / Delete Adoptable Pets
+      </Button>
+      <Button
+        className="account-buttons"
+        variant="light"
+        style={{
+          background: "#800080",
+          margin: ".5%",
+          color: "whitesmoke",
+          padding: "px",
+        }}
+        href="/emplost"
+      >
+        Edit / Delete Lost Pets
+      </Button>
       </>
         <div className="container2">
       <Table striped bordered hover className="table-specs" >
@@ -132,6 +158,13 @@ const EmployeeAccountPage = () => {
           </Table>
           
           </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <br/>
           <br/>
           <br/>

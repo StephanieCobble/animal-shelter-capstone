@@ -1,24 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./AdoptPage.css";
-import EditAdoptable from "./EditAdoptable";
-import DeleteAdoptable from "./DeleteAdoptable";
+import EditLost from "./EditLost";
+import DeleteLost from "./DeleteLost";
 import "../AccountPage/AccountPage.css";
 import Button from "react-bootstrap/Button";
 import { Table } from "react-bootstrap";
 
-const AdoptPage = () => {
+const LostPetsPage = () => {
   const [pets, setPets] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const getAnimals = async () => {
       try {
-        let response = await axios.get(`http://127.0.0.1:8000/api/animals/`);
+        let response = await axios.get(`http://127.0.0.1:8000/api/lost/`);
         setPets(response.data);
       } catch (error) {
         console.log(error.message);
@@ -28,19 +24,20 @@ const AdoptPage = () => {
   }, []);
 
   return (
+
     <>
     <div className="account-buttons">
       <Button
         
         variant="light"
         style={{ background: "#800080", margin: ".5%", color: "whitesmoke" }}
-        href="/adoptsearch"
+        href="/lostsearch"
       >
-        Search Adoptable Pets
+        Search Lost Pets
       </Button>
       </div>
 
-      <h1 className="container">Adoptable Pets</h1>
+      <h1 className="container">Lost Pets</h1>
 
 
       <div className="container2">
@@ -55,8 +52,9 @@ const AdoptPage = () => {
             <th scope="col">Age</th>
             <th scope="col">Picture</th>
             <th scope="col">Description</th>
-            {/* <th scope="col">Edit</th>
-            <th scope="col">Delete</th> */}
+            <th scope="col">Date Found</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
           </tr>
         </thead>
 
@@ -88,19 +86,39 @@ const AdoptPage = () => {
             <td>
             {pet.description}
             </td>
-            {/* <td>
-            <EditAdoptable pet={pet} />
+            <td>
+            {pet.date_found}
             </td>
             <td>
-            <DeleteAdoptable pet={pet} />
-            </td> */}
-            </tr>
+            <EditLost pet={pet} />
+            </td>
+            <td>
+            <DeleteLost pet={pet} />
+            </td>
+          </tr>
           ))}
              </tbody>
           </Table>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
       </div>
     </>
   );
 };
 
-export default AdoptPage;
+export default LostPetsPage;

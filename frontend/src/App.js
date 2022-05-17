@@ -15,6 +15,8 @@ import AccountPage from "./pages/AccountPage/AccountPage";
 import EmployeeAccountPage from "./pages/AccountPage/EmployeeAccountPage";
 import AddNewAdoptable from "./pages/AdoptPage/AddNewAdoptable";
 import AddNewLost from "./pages/LostPetsPage/AddNewLost";
+import EmpAdoptPage from "./pages/AdoptPage/EmpAdoptPage";
+import EmpLostPetsPage from "./pages/LostPetsPage/EmpLostPetsPage";
 
 
 // Component Imports
@@ -36,7 +38,9 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/adopt" element={<AdoptPage />} />
+        <Route path="/empadopt" element={<EmpAdoptPage />} />
         <Route path="/lost" element={<LostPetsPage />} />
+        <Route path="/emplost" element={<EmpLostPetsPage />} />
         <Route path="/adoptsearch" element={<SearchAdoptPage />} />
         <Route path="/lostsearch" element={<SearchLostPetsPage />} />
         <Route
