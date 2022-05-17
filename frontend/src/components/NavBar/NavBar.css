@@ -19,9 +19,9 @@ li {
   /* margin-bottom: 1rem; */
   /* padding: 1rem 1rem; */
   padding-right: 1rem;
-  background-image: url("/../frontend/Assets/navBar/navbar.png");
+  background-image: url("/../frontend/Assets/navBar/navbar2.png");
   /* border-bottom: 2px solid #000000; */
-  background-size: 51% 78%;
+  background-size: 71% 75%;
   background-repeat:no-repeat;
   background-position: 70% 1%;
 }
@@ -65,6 +65,8 @@ li {
 .brand {
   cursor: pointer;
   font-size: 2rem;
+  margin-left: 4%;
+  margin-top: 1%;
 }
 
 .font{

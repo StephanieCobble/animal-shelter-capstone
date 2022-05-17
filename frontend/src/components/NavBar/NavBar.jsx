@@ -20,8 +20,7 @@ const Navbar = () => {
         <li className="brand">
           <div>
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <div className="font">Haven</div>
-            <div className="font2">Pet Rescue</div>
+            <div className="font">Haven</div> <div className="font2">Pet Rescue</div>
           </Link>
           </div>
         </li>
