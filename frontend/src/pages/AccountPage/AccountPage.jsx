@@ -76,7 +76,7 @@ const AccountPage = () => {
   return (
     <div className="home-container">
       <h1> Create a New Adoption form for {user.username} </h1>
-
+  
       <form
         striped
         bordered
